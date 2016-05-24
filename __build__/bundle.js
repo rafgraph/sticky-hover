@@ -26241,7 +26241,7 @@
 	        null,
 	        ':active'
 	      ),
-	      ' pseudo-classes applied inside ',
+	      ' pseudo-classes only applied inside ',
 	      _react2.default.createElement(
 	        'code',
 	        null,

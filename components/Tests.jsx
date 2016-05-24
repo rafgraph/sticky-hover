@@ -32,8 +32,8 @@ function Tests() {
       )}
       {generateTest("Test 2", "test-2",
         <div>
-          <code>:hover</code> and <code>:active</code> pseudo-classes applied
-          inside <code>@media (hover: hover) {'{ ... }'}</code>
+          <code>:hover</code> and <code>:active</code> pseudo-classes only
+          applied inside <code>@media (hover: hover) {'{ ... }'}</code>
         </div>
       )}
       {generateTest("Test 3", "test-3",
