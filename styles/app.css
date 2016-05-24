@@ -111,3 +111,22 @@ code {
     color: red;
   }
 }
+
+/*test 3*/
+.test-3:hover {
+  color: green;
+}
+
+.test-3:active {
+  color: red;
+}
+
+@media (hover: none) {
+  .test-3:hover {
+    color: inherit;
+  }
+
+  .test-3:active {
+    color: inherit;
+  }
+}

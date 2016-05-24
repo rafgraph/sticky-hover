@@ -26243,6 +26243,29 @@
 	        '{ ... }'
 	      ),
 	      '.'
+	    )),
+	    generateTest("Test 3", "test-3", _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'code',
+	        null,
+	        ':hover'
+	      ),
+	      ' and ',
+	      _react2.default.createElement(
+	        'code',
+	        null,
+	        ':active'
+	      ),
+	      ' pseudo-classes applied normally, but reset inside of ',
+	      _react2.default.createElement(
+	        'code',
+	        null,
+	        '@media (hover: none) ',
+	        '{ ... }'
+	      ),
+	      '.'
 	    ))
 	  );
 	}

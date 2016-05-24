@@ -34,6 +34,13 @@ function Tests() {
           inside <code>@media (hover: hover) {'{ ... }'}</code>.
         </div>
       )}
+      {generateTest("Test 3", "test-3",
+        <div>
+          <code>:hover</code> and <code>:active</code> pseudo-classes applied
+          normally, but reset inside
+          of <code>@media (hover: none) {'{ ... }'}</code>.
+        </div>
+      )}
     </div>
   );
 }
