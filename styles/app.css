@@ -20,7 +20,7 @@ html, body, nav, p, div, span, code, h1, h2, a, button {
 
 #root > div {
   min-width: 34vw;
-  max-width: 600px;
+  max-width: 550px;
   margin: auto;
   padding: 2vh 3vw 12vh 3vw;
 }
