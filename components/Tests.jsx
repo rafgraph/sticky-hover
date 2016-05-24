@@ -2,6 +2,7 @@ import React from 'react';
 import { hasTouch } from 'detect-touch';
 import RadiumTest from './RadiumTest';
 
+
 function Tests() {
 
   function generateTest(title, testClass, description) {
@@ -55,7 +56,14 @@ function Tests() {
           of <code>@media (hover: hover) {'{ ... }'}</code>
         </div>
       )}
-      <RadiumTest />
+      <RadiumTest
+        title="Test 6"
+        description={
+          <div className="test-description">
+            Radium inline <code>:hover</code> and <code>:active</code> styles.
+          </div>
+        }
+      />
     </div>
   );
 }

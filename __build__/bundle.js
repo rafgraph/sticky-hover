@@ -26319,7 +26319,26 @@
 	        '{ ... }'
 	      )
 	    )),
-	    _react2.default.createElement(_RadiumTest2.default, null)
+	    _react2.default.createElement(_RadiumTest2.default, {
+	      title: 'Test 6',
+	      description: _react2.default.createElement(
+	        'div',
+	        { className: 'test-description' },
+	        'Radium inline ',
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          ':hover'
+	        ),
+	        ' and ',
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          ':active'
+	        ),
+	        ' styles.'
+	      )
+	    })
 	  );
 	}
 	
@@ -30414,38 +30433,27 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	function RadiumTest() {
+	function RadiumTest(_ref) {
+	  var title = _ref.title;
+	  var description = _ref.description;
+	
+	  var id = title.replace(/ /g, '-').toLowerCase();
+	
 	  return _react2.default.createElement(
 	    'div',
 	    { className: 'test' },
 	    _react2.default.createElement(
 	      'h2',
-	      { id: 'test-6-title' },
-	      'Test 6'
+	      { id: id },
+	      title
 	    ),
-	    _react2.default.createElement(
-	      'div',
-	      { className: 'test-description' },
-	      'Radium inline ',
-	      _react2.default.createElement(
-	        'code',
-	        null,
-	        ':hover'
-	      ),
-	      ' and ',
-	      _react2.default.createElement(
-	        'code',
-	        null,
-	        ':active'
-	      ),
-	      ' styles.'
-	    ),
+	    description,
 	    _react2.default.createElement(
 	      'div',
 	      { className: 'anchor-tag' },
 	      _react2.default.createElement(
 	        'a',
-	        { key: 'a', href: '#test-6-title',
+	        { key: 'a', href: '#' + id,
 	          style: { ':hover': { color: 'green' }, ':active': { color: 'red' } }
 	        },
 	        'Anchor tag: hover is green, active is red'
