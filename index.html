@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Single Page Apps for GitHub Pages</title>
+
+    <!-- Start Single Page Apps for GitHub Pages -->
+    <script type="text/javascript">
+
+      /////////////////////////////////////////////////////////////////////////
+      // Single Page Apps for GitHub Pages
+      // https://github.com/rafrex/spa-github-pages
+      // ----------------------------------------------------------------------
+      // This script checks to see if 1) the site is accessed at /my-repo-name
+      // or if 2) a redirect is present in the query string.
+      // 1. GitHub Pages are always available at /my-repo-name even when a
+      // custom domain is in use, which can break frontend routing, so
+      // if the site is accessed at /my-repo-name a redirect to just
+      // the domain using window.location.replace(...) is required.
+      // https://help.github.com/articles/custom-domain-redirects-for-github-pages-sites/
+      // 2. Takes the redirect query string created in the 404.html script,
+      // converts it back into the correct url and adds it to the
+      // browser's history using window.history.replaceState(...),
+      // which won't cause the browser to attempt to load the new url.
+      // When the single page app is loaded further down in this file,
+      // the correct url will be waiting in the browser's history for
+      // the single page app to route accordingly.
+      /////////////////////////////////////////////////////////////////////////
+
+      (function(l) {
+        // SET THIS: e.g. my-repo-name
+        var gitHubRepoName = 'spa-github-pages'
+        // SET THIS: e.g. http://subdomain.example.tld
+        var domain = 'http://spa-github-pages.rafrex.com'
+
+        if (l.pathname.split('/')[1] === gitHubRepoName) {
+          l.replace(domain);
+        } else if (l.search) {
+          var q = {};
+          l.search.slice(1).split('&').forEach(function(v) {
+            var a = v.split('=');
+            q[a[0]] = a.slice(1).join('=').replace(/%2F/g, '/').replace(/%26/g, '&');
+          });
+          if(q.redirect === 'true') {
+            window.history.replaceState(null, null,
+              (q.pathname ? q.pathname : '') +
+              (q.query ? q.query : '') +
+              l.hash
+            );
+          }
+        }
+      }(window.location))
+    </script>
+    <!-- End Single Page Apps for GitHub Pages -->
+
+    <!-- Start Google Analytics -->
+    <script>
+      if (window.location.hostname === 'spa-github-pages.rafrex.com') {
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-75627125-4', 'auto');
+        ga('send', 'pageview');
+      } else {
+        console.warn(
+          'WARNING: The Google analytics function is for a different ' +
+          'domain (http://spa-github-pages.rafrex.com) and did not run, ' +
+          'please remove the script from the index.html file.');
+      }
+    </script>
+    <!-- End Google Analytics -->
+    
+    <link rel="stylesheet" href="/styles/app.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- single page app in bundle.js -->
+    <script src="/__build__/bundle.js"></script>
+  </body>
+</html>
