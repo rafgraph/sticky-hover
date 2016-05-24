@@ -26163,6 +26163,8 @@
 	
 	var _detectTouch = __webpack_require__(/*! detect-touch */ 228);
 	
+	var _reactRouter = __webpack_require__(/*! react-router */ 164);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function Tests() {
@@ -26241,8 +26243,7 @@
 	        null,
 	        '@media (hover: hover) ',
 	        '{ ... }'
-	      ),
-	      '.'
+	      )
 	    )),
 	    generateTest("Test 3", "test-3", _react2.default.createElement(
 	      'div',
@@ -26264,8 +26265,29 @@
 	        null,
 	        '@media (hover: none) ',
 	        '{ ... }'
+	      )
+	    )),
+	    generateTest("Test 4", "test-4", _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'code',
+	        null,
+	        ':hover'
 	      ),
-	      '.'
+	      ' and ',
+	      _react2.default.createElement(
+	        'code',
+	        null,
+	        ':active'
+	      ),
+	      ' pseudo-classes only applied if ',
+	      _react2.default.createElement(
+	        'code',
+	        null,
+	        '.no-touch'
+	      ),
+	      ' class is present.'
 	    ))
 	  );
 	}

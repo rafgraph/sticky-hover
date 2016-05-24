@@ -1,5 +1,6 @@
 import React from 'react';
 import { hasTouch } from 'detect-touch';
+import { Link } from 'react-router';
 
 function Tests() {
 
@@ -31,14 +32,20 @@ function Tests() {
       {generateTest("Test 2", "test-2",
         <div>
           <code>:hover</code> and <code>:active</code> pseudo-classes applied
-          inside <code>@media (hover: hover) {'{ ... }'}</code>.
+          inside <code>@media (hover: hover) {'{ ... }'}</code>
         </div>
       )}
       {generateTest("Test 3", "test-3",
         <div>
           <code>:hover</code> and <code>:active</code> pseudo-classes applied
           normally, but reset inside
-          of <code>@media (hover: none) {'{ ... }'}</code>.
+          of <code>@media (hover: none) {'{ ... }'}</code>
+        </div>
+      )}
+      {generateTest("Test 4", "test-4",
+        <div>
+          <code>:hover</code> and <code>:active</code> pseudo-classes only
+          applied if <code>.no-touch</code> class is present.
         </div>
       )}
     </div>

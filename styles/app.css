@@ -78,6 +78,7 @@ h2 {
 
 a {
   border-bottom: 1px dotted;
+  touch-action: none;
 }
 
 button {
@@ -129,4 +130,13 @@ code {
   .test-3:active {
     color: inherit;
   }
+}
+
+/*test 4*/
+.no-touch .test-4:hover {
+  color: green;
+}
+
+.no-touch .test-4:active {
+  color: red;
 }
