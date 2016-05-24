@@ -26173,7 +26173,7 @@
 	      { className: 'test' },
 	      _react2.default.createElement(
 	        'h2',
-	        null,
+	        { id: testClass + '-title' },
 	        title
 	      ),
 	      _react2.default.createElement(
@@ -26186,7 +26186,7 @@
 	        { className: 'anchor-tag' },
 	        _react2.default.createElement(
 	          'a',
-	          { href: '#', className: testClass },
+	          { href: '#' + testClass + '-title', className: testClass },
 	          'Anchor tag: hover is green, active is red'
 	        )
 	      ),

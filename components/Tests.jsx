@@ -6,12 +6,12 @@ function Tests() {
   function generateTest(title, testClass, description) {
     return (
       <div className="test">
-        <h2>{title}</h2>
+        <h2 id={`${testClass}-title`}>{title}</h2>
         <div className="test-description">
           {description}
         </div>
         <div className="anchor-tag">
-          <a href="#" className={testClass}>Anchor tag: hover is green, active is red</a>
+          <a href={`#${testClass}-title`} className={testClass}>Anchor tag: hover is green, active is red</a>
         </div>
         <div className="button-tag">
           <button className={testClass}>Button tag: hover is green, active is red</button>
