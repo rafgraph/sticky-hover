@@ -65,7 +65,7 @@
 	
 	var _Tests2 = _interopRequireDefault(_Tests);
 	
-	var _PageNotFound = __webpack_require__(/*! ./components/PageNotFound */ 288);
+	var _PageNotFound = __webpack_require__(/*! ./components/PageNotFound */ 289);
 	
 	var _PageNotFound2 = _interopRequireDefault(_PageNotFound);
 	
@@ -26163,11 +26163,9 @@
 	
 	var _detectTouch = __webpack_require__(/*! detect-touch */ 227);
 	
-	var _reactRouter = __webpack_require__(/*! react-router */ 164);
+	var _RadiumTest = __webpack_require__(/*! ./RadiumTest */ 288);
 	
-	var _radium = __webpack_require__(/*! radium */ 228);
-	
-	var _radium2 = _interopRequireDefault(_radium);
+	var _RadiumTest2 = _interopRequireDefault(_RadiumTest);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -26321,58 +26319,11 @@
 	        '{ ... }'
 	      )
 	    )),
-	    _react2.default.createElement(
-	      'div',
-	      { className: 'test' },
-	      _react2.default.createElement(
-	        'h2',
-	        { id: 'test-6-title' },
-	        'Test 6'
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'test-description' },
-	        'Radium inline ',
-	        _react2.default.createElement(
-	          'code',
-	          null,
-	          ':hover'
-	        ),
-	        ' and ',
-	        _react2.default.createElement(
-	          'code',
-	          null,
-	          ':active'
-	        ),
-	        ' styles.'
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'anchor-tag' },
-	        _react2.default.createElement(
-	          'a',
-	          { key: 'a', href: '#test-6-title',
-	            style: { ':hover': { color: 'green' }, ':active': { color: 'red' } }
-	          },
-	          'Anchor tag: hover is green, active is red'
-	        )
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'button-tag' },
-	        _react2.default.createElement(
-	          'button',
-	          { key: 'b',
-	            style: { ':hover': { color: 'green' }, ':active': { color: 'red' } }
-	          },
-	          'Button tag: hover is green, active is red'
-	        )
-	      )
-	    )
+	    _react2.default.createElement(_RadiumTest2.default, null)
 	  );
 	}
 	
-	exports.default = (0, _radium2.default)(Tests);
+	exports.default = Tests;
 
 /***/ },
 /* 227 */
@@ -30442,6 +30393,82 @@
 
 /***/ },
 /* 288 */
+/*!***********************************!*\
+  !*** ./components/RadiumTest.jsx ***!
+  \***********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _radium = __webpack_require__(/*! radium */ 228);
+	
+	var _radium2 = _interopRequireDefault(_radium);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function RadiumTest() {
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'test' },
+	    _react2.default.createElement(
+	      'h2',
+	      { id: 'test-6-title' },
+	      'Test 6'
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'test-description' },
+	      'Radium inline ',
+	      _react2.default.createElement(
+	        'code',
+	        null,
+	        ':hover'
+	      ),
+	      ' and ',
+	      _react2.default.createElement(
+	        'code',
+	        null,
+	        ':active'
+	      ),
+	      ' styles.'
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'anchor-tag' },
+	      _react2.default.createElement(
+	        'a',
+	        { key: 'a', href: '#test-6-title',
+	          style: { ':hover': { color: 'green' }, ':active': { color: 'red' } }
+	        },
+	        'Anchor tag: hover is green, active is red'
+	      )
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'button-tag' },
+	      _react2.default.createElement(
+	        'button',
+	        { key: 'b',
+	          style: { ':hover': { color: 'green' }, ':active': { color: 'red' } }
+	        },
+	        'Button tag: hover is green, active is red'
+	      )
+	    )
+	  );
+	}
+	
+	exports.default = (0, _radium2.default)(RadiumTest);
+
+/***/ },
+/* 289 */
 /*!*************************************!*\
   !*** ./components/PageNotFound.jsx ***!
   \*************************************/
