@@ -48,6 +48,13 @@ function Tests() {
           applied if <code>.no-touch</code> class is present.
         </div>
       )}
+      {generateTest("Test 5", "test-5",
+        <div>
+          <code>:hover</code> and <code>:active</code> pseudo-classes
+          applied if <code>.no-touch</code> class is present, AND inside of
+          {' '} <code>@media (hover: hover) {'{ ... }'}</code>
+        </div>
+      )}
     </div>
   );
 }

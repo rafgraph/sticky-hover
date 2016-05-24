@@ -26288,6 +26288,36 @@
 	        '.no-touch'
 	      ),
 	      ' class is present.'
+	    )),
+	    generateTest("Test 5", "test-5", _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'code',
+	        null,
+	        ':hover'
+	      ),
+	      ' and ',
+	      _react2.default.createElement(
+	        'code',
+	        null,
+	        ':active'
+	      ),
+	      ' pseudo-classes applied if ',
+	      _react2.default.createElement(
+	        'code',
+	        null,
+	        '.no-touch'
+	      ),
+	      ' class is present, AND inside of',
+	      ' ',
+	      ' ',
+	      _react2.default.createElement(
+	        'code',
+	        null,
+	        '@media (hover: hover) ',
+	        '{ ... }'
+	      )
 	    ))
 	  );
 	}

@@ -140,3 +140,22 @@ code {
 .no-touch .test-4:active {
   color: red;
 }
+
+/*test 5*/
+.no-touch .test-5:hover {
+  color: green;
+}
+
+.no-touch .test-5:active {
+  color: red;
+}
+
+@media (hover: hover) {
+  .test-5:hover {
+    color: green;
+  }
+
+  .test-5:active {
+    color: red;
+  }
+}
