@@ -26163,6 +26163,10 @@
 	
 	var _detectTouch = __webpack_require__(/*! detect-touch */ 227);
 	
+	var _CssTest = __webpack_require__(/*! ./CssTest */ 291);
+	
+	var _CssTest2 = _interopRequireDefault(_CssTest);
+	
 	var _RadiumTest = __webpack_require__(/*! ./RadiumTest */ 288);
 	
 	var _RadiumTest2 = _interopRequireDefault(_RadiumTest);
@@ -26171,157 +26175,120 @@
 	
 	function Tests() {
 	
-	  function generateTest(title, testClass, description) {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'test' },
-	      _react2.default.createElement(
-	        'h2',
-	        { id: testClass + '-title' },
-	        title
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'test-description' },
-	        description
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'anchor-tag' },
-	        _react2.default.createElement(
-	          'a',
-	          { href: '#' + testClass + '-title', className: testClass },
-	          'Anchor tag: hover is green, active is red'
-	        )
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'button-tag' },
-	        _react2.default.createElement(
-	          'button',
-	          { className: testClass },
-	          'Button tag: hover is green, active is red'
-	        )
-	      )
-	    );
-	  }
-	
 	  return _react2.default.createElement(
 	    'div',
 	    { className: _detectTouch.hasTouch ? 'touch' : 'no-touch' },
-	    generateTest("Test 1", "test-1", _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(
-	        'code',
-	        null,
-	        ':hover'
-	      ),
-	      ' and ',
-	      _react2.default.createElement(
-	        'code',
-	        null,
-	        ':active'
-	      ),
-	      ' pseudo-classes applied normally (without restriction).'
-	    )),
-	    generateTest("Test 2", "test-2", _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(
-	        'code',
-	        null,
-	        ':hover'
-	      ),
-	      ' and ',
-	      _react2.default.createElement(
-	        'code',
-	        null,
-	        ':active'
-	      ),
-	      ' pseudo-classes only applied inside ',
-	      _react2.default.createElement(
-	        'code',
-	        null,
-	        '@media (hover: hover) ',
-	        '{ ... }'
-	      )
-	    )),
-	    generateTest("Test 3", "test-3", _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(
-	        'code',
-	        null,
-	        ':hover'
-	      ),
-	      ' and ',
-	      _react2.default.createElement(
-	        'code',
-	        null,
-	        ':active'
-	      ),
-	      ' pseudo-classes applied normally, but reset inside of ',
-	      _react2.default.createElement(
-	        'code',
-	        null,
-	        '@media (hover: none) ',
-	        '{ ... }'
-	      )
-	    )),
-	    generateTest("Test 4", "test-4", _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(
-	        'code',
-	        null,
-	        ':hover'
-	      ),
-	      ' and ',
-	      _react2.default.createElement(
-	        'code',
-	        null,
-	        ':active'
-	      ),
-	      ' pseudo-classes only applied if ',
-	      _react2.default.createElement(
-	        'code',
-	        null,
-	        '.no-touch'
-	      ),
-	      ' class is present.'
-	    )),
-	    generateTest("Test 5", "test-5", _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(
-	        'code',
-	        null,
-	        ':hover'
-	      ),
-	      ' and ',
-	      _react2.default.createElement(
-	        'code',
-	        null,
-	        ':active'
-	      ),
-	      ' pseudo-classes applied if ',
-	      _react2.default.createElement(
-	        'code',
-	        null,
-	        '.no-touch'
-	      ),
-	      ' class is present, as well as inside of ',
-	      _react2.default.createElement(
-	        'code',
-	        null,
-	        '@media (hover: hover) ',
-	        '{ ... }'
-	      )
-	    )),
-	    _react2.default.createElement(_RadiumTest2.default, {
-	      title: 'Test 6',
-	      description: _react2.default.createElement(
+	    _react2.default.createElement(_CssTest2.default, { title: 'Test 1', testClass: 'test-1', description: _react2.default.createElement(
+	        'div',
+	        { className: 'test-description' },
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          ':hover'
+	        ),
+	        ' and ',
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          ':active'
+	        ),
+	        ' pseudo-classes applied normally (without restriction).'
+	      ) }),
+	    _react2.default.createElement(_CssTest2.default, { title: 'Test 2', testClass: 'test-2', description: _react2.default.createElement(
+	        'div',
+	        { className: 'test-description' },
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          ':hover'
+	        ),
+	        ' and ',
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          ':active'
+	        ),
+	        ' pseudo-classes only applied inside ',
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          '@media (hover: hover) ',
+	          '{ ... }'
+	        )
+	      ) }),
+	    _react2.default.createElement(_CssTest2.default, { title: 'Test 3', testClass: 'test-3', description: _react2.default.createElement(
+	        'div',
+	        { className: 'test-description' },
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          ':hover'
+	        ),
+	        ' and ',
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          ':active'
+	        ),
+	        ' pseudo-classes applied normally, but reset inside of ',
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          '@media (hover: none) ',
+	          '{ ... }'
+	        )
+	      ) }),
+	    _react2.default.createElement(_CssTest2.default, { title: 'Test 4', testClass: 'test-4', description: _react2.default.createElement(
+	        'div',
+	        { className: 'test-description' },
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          ':hover'
+	        ),
+	        ' and ',
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          ':active'
+	        ),
+	        ' pseudo-classes only applied if ',
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          '.no-touch'
+	        ),
+	        ' class is present.'
+	      ) }),
+	    _react2.default.createElement(_CssTest2.default, { title: 'Test 5', testClass: 'test-5', description: _react2.default.createElement(
+	        'div',
+	        { className: 'test-description' },
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          ':hover'
+	        ),
+	        ' and ',
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          ':active'
+	        ),
+	        ' pseudo-classes applied if ',
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          '.no-touch'
+	        ),
+	        ' class is present, as well as inside of ',
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          '@media (hover: hover) ',
+	          '{ ... }'
+	        )
+	      ) }),
+	    _react2.default.createElement(_RadiumTest2.default, { title: 'Test 6', description: _react2.default.createElement(
 	        'div',
 	        { className: 'test-description' },
 	        'Radium inline ',
@@ -26337,8 +26304,7 @@
 	          ':active'
 	        ),
 	        ' styles.'
-	      )
-	    })
+	      ) })
 	  );
 	}
 	
@@ -30528,6 +30494,63 @@
 	}
 	
 	exports.default = PageNotFound;
+
+/***/ },
+/* 290 */,
+/* 291 */
+/*!********************************!*\
+  !*** ./components/CssTest.jsx ***!
+  \********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function CssTest(_ref) {
+	  var title = _ref.title;
+	  var testClass = _ref.testClass;
+	  var description = _ref.description;
+	
+	  return _react2.default.createElement(
+	    "div",
+	    { className: "test" },
+	    _react2.default.createElement(
+	      "h2",
+	      { id: testClass + "-title" },
+	      title
+	    ),
+	    description,
+	    _react2.default.createElement(
+	      "div",
+	      { className: "anchor-tag" },
+	      _react2.default.createElement(
+	        "a",
+	        { href: "#" + testClass + "-title", className: testClass },
+	        "Anchor tag: hover is green, active is red"
+	      )
+	    ),
+	    _react2.default.createElement(
+	      "div",
+	      { className: "button-tag" },
+	      _react2.default.createElement(
+	        "button",
+	        { className: testClass },
+	        "Button tag: hover is green, active is red"
+	      )
+	    )
+	  );
+	}
+	
+	exports.default = CssTest;
 
 /***/ }
 /******/ ]);
