@@ -26220,6 +26220,29 @@
 	        ':active'
 	      ),
 	      ' pseudo-classes applied normally (without restriction).'
+	    )),
+	    generateTest("Test 2", "test-2", _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'code',
+	        null,
+	        ':hover'
+	      ),
+	      ' and ',
+	      _react2.default.createElement(
+	        'code',
+	        null,
+	        ':active'
+	      ),
+	      ' pseudo-classes applied inside ',
+	      _react2.default.createElement(
+	        'code',
+	        null,
+	        '@media (hover: hover) ',
+	        '{ ... }'
+	      ),
+	      '.'
 	    ))
 	  );
 	}

@@ -28,6 +28,12 @@ function Tests() {
           normally (without restriction).
         </div>
       )}
+      {generateTest("Test 2", "test-2",
+        <div>
+          <code>:hover</code> and <code>:active</code> pseudo-classes applied
+          inside <code>@media (hover: hover) {'{ ... }'}</code>.
+        </div>
+      )}
     </div>
   );
 }

@@ -100,3 +100,14 @@ code {
 .test-1:active {
   color: red;
 }
+
+/*test 2*/
+@media (hover: hover) {
+  .test-2:hover {
+    color: green;
+  }
+
+  .test-2:active {
+    color: red;
+  }
+}
