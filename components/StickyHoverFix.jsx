@@ -20,9 +20,10 @@ class StickyHoverFix extends React.Component {
   }
 
   getStyle() {
+    // order here matters when multiple states are true
+    if (this.state.touchActive) return {color: this.props.touchActive};
     if (this.state.active) return {color: this.props.active};
     if (this.state.hover) return {color: this.props.hover};
-    if (this.state.touchActive) return {color: this.props.touchActive};
     return {color: 'inherit'};
   }
 
