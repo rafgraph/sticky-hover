@@ -29891,6 +29891,8 @@
 	    value: function handleTouchEnd() {
 	      this.setState({
 	        touchActive: false,
+	        active: false,
+	        hover: false,
 	        touchTime: new Date()
 	      });
 	    }

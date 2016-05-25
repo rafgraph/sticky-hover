@@ -34,6 +34,8 @@ class StickyHoverFix extends React.Component {
   handleTouchEnd() {
     this.setState({
       touchActive: false,
+      active: false,
+      hover: false,
       touchTime: new Date()
     });
   }
