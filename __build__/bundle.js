@@ -29824,9 +29824,9 @@
 	  }, {
 	    key: 'handleMouseEnter',
 	    value: function handleMouseEnter() {
-	      // arbitrary 250 ms leeway for mouseEnter event to fire after
+	      // arbitrary 500 ms leeway for mouseEnter event to fire after
 	      // touchEnd event
-	      if (new Date() - this.state.touchTimeStamp > 250) {
+	      if (new Date() - this.state.touchTimeStamp > 500) {
 	        this.setState({ hover: true });
 	      }
 	    }
