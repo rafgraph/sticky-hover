@@ -2,7 +2,7 @@ import React from 'react';
 import { hasTouch } from 'detect-touch';
 import CssTest from './CssTest';
 import RadiumTest from './RadiumTest';
-import StickyHoverFix from './StickyHoverFix';
+import CustomJsTest from './CustomJsTest';
 
 
 function Tests() {
@@ -53,21 +53,17 @@ function Tests() {
           </div>
       }/>
 
-      <StickyHoverFix
-        hover="red"
-        active="green"
-        touchActive="blue"
-        tagType="a"
-        linkTo="#"
-        content="Anchor tag: hover is green, active is red, touch active is blue"
-      />
-      <StickyHoverFix
-        hover="red"
-        active="green"
-        touchActive="blue"
-        tagType="button"
-        content="Button tag: hover is green, active is red, touch active is blue"
-      />
+      <CustomJsTest title="Test 7 - The Fix" description={
+        <div className="test-description">
+          Custom component <code>StickyHoverFix</code> that implements {' '}
+          <code>:hover</code>, <code>:active</code> and {' '}
+          <code>:touchActive</code> with inline styles using touch and mouse
+          event triggers. The <code>mouseEnter</code> event doesn't {' '}
+          <code>setState</code> to simulate <code>:hover</code> if it's
+          immediately preceded by a <code>touchEnd</code> event.
+        </div>
+      }/>
+
     </div>
   );
 }
