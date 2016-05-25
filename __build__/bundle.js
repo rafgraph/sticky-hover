@@ -65,7 +65,7 @@
 	
 	var _Tests2 = _interopRequireDefault(_Tests);
 	
-	var _PageNotFound = __webpack_require__(/*! ./components/PageNotFound */ 290);
+	var _PageNotFound = __webpack_require__(/*! ./components/PageNotFound */ 291);
 	
 	var _PageNotFound2 = _interopRequireDefault(_PageNotFound);
 	
@@ -26171,7 +26171,7 @@
 	
 	var _RadiumTest2 = _interopRequireDefault(_RadiumTest);
 	
-	var _StickyHoverFix = __webpack_require__(/*! ./StickyHoverFix */ 291);
+	var _StickyHoverFix = __webpack_require__(/*! ./StickyHoverFix */ 290);
 	
 	var _StickyHoverFix2 = _interopRequireDefault(_StickyHoverFix);
 	
@@ -30518,6 +30518,129 @@
 
 /***/ },
 /* 290 */
+/*!***************************************!*\
+  !*** ./components/StickyHoverFix.jsx ***!
+  \***************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _detectTouch = __webpack_require__(/*! detect-touch */ 227);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var StickyHoverFix = function (_React$Component) {
+	  _inherits(StickyHoverFix, _React$Component);
+	
+	  function StickyHoverFix(props) {
+	    _classCallCheck(this, StickyHoverFix);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(StickyHoverFix).call(this, props));
+	
+	    _this.state = {
+	      hover: false,
+	      active: false,
+	      touchActive: false,
+	      touchTimeStamp: new Date()
+	    };
+	    _this.getStyle = _this.getStyle.bind(_this);
+	    _this.handleTouchStart = _this.handleTouchStart.bind(_this);
+	    _this.handleTouchEnd = _this.handleTouchEnd.bind(_this);
+	    _this.handleMouseEnter = _this.handleMouseEnter.bind(_this);
+	    _this.handleMouseLeave = _this.handleMouseLeave.bind(_this);
+	    _this.handleMouseDown = _this.handleMouseDown.bind(_this);
+	    _this.handleMouseUp = _this.handleMouseUp.bind(_this);
+	    return _this;
+	  }
+	
+	  _createClass(StickyHoverFix, [{
+	    key: 'getStyle',
+	    value: function getStyle() {
+	      if (this.state.active) return { color: this.props.active };
+	      if (this.state.hover) return { color: this.props.hover };
+	      if (this.state.touchActive) return { color: this.props.touchActive };
+	      return { color: 'inherit' };
+	    }
+	  }, {
+	    key: 'handleTouchStart',
+	    value: function handleTouchStart() {
+	      this.setState({ touchActive: true });
+	    }
+	  }, {
+	    key: 'handleTouchEnd',
+	    value: function handleTouchEnd() {
+	      this.setState({
+	        touchActive: false,
+	        touchTimeStamp: new Date()
+	      });
+	    }
+	  }, {
+	    key: 'handleMouseEnter',
+	    value: function handleMouseEnter() {
+	      // arbitrary 250 ms leeway for mouseEnter event to fire after
+	      // touchEnd event
+	      if (new Date() - this.state.touchTimeStamp > 250) {
+	        this.setState({ hover: true });
+	      }
+	    }
+	  }, {
+	    key: 'handleMouseLeave',
+	    value: function handleMouseLeave() {
+	      this.setState({ hover: false });
+	    }
+	  }, {
+	    key: 'handleMouseDown',
+	    value: function handleMouseDown() {
+	      this.setState({ active: true });
+	    }
+	  }, {
+	    key: 'handleMouseUp',
+	    value: function handleMouseUp() {
+	      this.setState({ active: false });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        this.props.tagType,
+	        {
+	          style: this.getStyle(),
+	          onTouchStart: _detectTouch.hasTouch ? this.handleTouchStart : null,
+	          onTouchEnd: _detectTouch.hasTouch ? this.handleTouchEnd : null,
+	          onMouseEnter: this.handleMouseEnter,
+	          onMouseLeave: this.handleMouseLeave,
+	          onMouseDown: this.handleMouseDown,
+	          onMouseUp: this.handleMouseUp,
+	          href: this.props.tagType === 'a' ? this.props.linkTo : null
+	        },
+	        this.props.content
+	      );
+	    }
+	  }]);
+	
+	  return StickyHoverFix;
+	}(_react2.default.Component);
+	
+	exports.default = StickyHoverFix;
+
+/***/ },
+/* 291 */
 /*!*************************************!*\
   !*** ./components/PageNotFound.jsx ***!
   \*************************************/
@@ -30569,127 +30692,6 @@
 	}
 	
 	exports.default = PageNotFound;
-
-/***/ },
-/* 291 */
-/*!***************************************!*\
-  !*** ./components/StickyHoverFix.jsx ***!
-  \***************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var StickyHoverFix = function (_React$Component) {
-	  _inherits(StickyHoverFix, _React$Component);
-	
-	  function StickyHoverFix(props) {
-	    _classCallCheck(this, StickyHoverFix);
-	
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(StickyHoverFix).call(this, props));
-	
-	    _this.state = {
-	      hover: false,
-	      active: false,
-	      touchActive: false,
-	      touchTimeStamp: new Date()
-	    };
-	    _this.getStyle = _this.getStyle.bind(_this);
-	    _this.handleTouchStart = _this.handleTouchStart.bind(_this);
-	    _this.handleTouchEnd = _this.handleTouchEnd.bind(_this);
-	    _this.handleMouseEnter = _this.handleMouseEnter.bind(_this);
-	    _this.handleMouseLeave = _this.handleMouseLeave.bind(_this);
-	    _this.handleMouseDown = _this.handleMouseDown.bind(_this);
-	    _this.handleMouseUp = _this.handleMouseUp.bind(_this);
-	    return _this;
-	  }
-	
-	  _createClass(StickyHoverFix, [{
-	    key: 'getStyle',
-	    value: function getStyle() {
-	      if (this.state.active) return { color: this.props.active };
-	      if (this.state.hover) return { color: this.props.hover };
-	      if (this.state.touchActive) return { color: this.props.touchActive };
-	      return { color: 'black' };
-	    }
-	  }, {
-	    key: 'handleTouchStart',
-	    value: function handleTouchStart() {
-	      this.setState({ touchActive: true });
-	    }
-	  }, {
-	    key: 'handleTouchEnd',
-	    value: function handleTouchEnd() {
-	      this.setState({
-	        touchActive: false,
-	        touchTimeStamp: new Date()
-	      });
-	    }
-	  }, {
-	    key: 'handleMouseEnter',
-	    value: function handleMouseEnter() {
-	      // arbitrary 250 ms leeway for mouseEnter event to fire after
-	      // touchEnd event
-	      if (new Date() - this.state.touchTimeStamp > 250) {
-	        this.setState({ hover: true });
-	      }
-	    }
-	  }, {
-	    key: 'handleMouseLeave',
-	    value: function handleMouseLeave() {
-	      this.setState({ hover: false });
-	    }
-	  }, {
-	    key: 'handleMouseDown',
-	    value: function handleMouseDown() {
-	      this.setState({ active: true });
-	    }
-	  }, {
-	    key: 'handleMouseUp',
-	    value: function handleMouseUp() {
-	      this.setState({ active: false });
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        this.props.tagType,
-	        {
-	          style: this.getStyle(),
-	          onTouchStart: this.handleTouchStart,
-	          onTouchEnd: this.handleTouchEnd,
-	          onMouseEnter: this.handleMouseEnter,
-	          onMouseLeave: this.handleMouseLeave,
-	          onMouseDown: this.handleMouseDown,
-	          onMouseUp: this.handleMouseUp,
-	          href: this.props.tagType === 'a' ? this.props.linkTo : null
-	        },
-	        this.props.content
-	      );
-	    }
-	  }]);
-	
-	  return StickyHoverFix;
-	}(_react2.default.Component);
-	
-	exports.default = StickyHoverFix;
 
 /***/ }
 /******/ ]);

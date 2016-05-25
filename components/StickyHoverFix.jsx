@@ -1,4 +1,5 @@
 import React from 'react';
+import { hasTouch } from 'detect-touch';
 
 class StickyHoverFix extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class StickyHoverFix extends React.Component {
     if (this.state.active) return {color: this.props.active};
     if (this.state.hover) return {color: this.props.hover};
     if (this.state.touchActive) return {color: this.props.touchActive};
-    return {color: 'black'};
+    return {color: 'inherit'};
   }
 
   handleTouchStart() {
@@ -56,13 +57,12 @@ class StickyHoverFix extends React.Component {
     this.setState({active: false});
   }
 
-
   render() {
     return (
       <this.props.tagType
         style={this.getStyle()}
-        onTouchStart={this.handleTouchStart}
-        onTouchEnd={this.handleTouchEnd}
+        onTouchStart={hasTouch ? this.handleTouchStart : null}
+        onTouchEnd={hasTouch ? this.handleTouchEnd : null}
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
         onMouseDown={this.handleMouseDown}
