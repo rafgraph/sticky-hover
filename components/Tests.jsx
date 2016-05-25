@@ -2,7 +2,7 @@ import React from 'react';
 import { hasTouch } from 'detect-touch';
 import CssTest from './CssTest';
 import RadiumTest from './RadiumTest';
-import FixStickyHover from './FixStickyHover';
+import StickyHoverFix from './StickyHoverFix';
 
 
 function Tests() {
@@ -53,11 +53,21 @@ function Tests() {
           </div>
       }/>
 
-      <FixStickyHover title="Test 7" description={
-        <div className="test-description">
-          Fix sticky hover.
-        </div>
-      }/>
+      <StickyHoverFix
+        hover="red"
+        active="green"
+        touchActive="blue"
+        tagType="a"
+        linkTo="#"
+        content="Anchor tag: hover is green, active is red, touch active is blue"
+      />
+      <StickyHoverFix
+        hover="red"
+        active="green"
+        touchActive="blue"
+        tagType="button"
+        content="Button tag: hover is green, active is red, touch active is blue"
+      />
     </div>
   );
 }

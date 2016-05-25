@@ -1,6 +1,6 @@
 import React from 'react';
 
-class FixStickyHover extends React.Component {
+class StickyHoverFix extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,9 +19,9 @@ class FixStickyHover extends React.Component {
   }
 
   getStyle() {
-    if (this.state.active) return {color: 'red'};
-    if (this.state.hover) return {color: 'green'};
-    if (this.state.touchActive) return {color: 'blue'};
+    if (this.state.active) return {color: this.props.active};
+    if (this.state.hover) return {color: this.props.hover};
+    if (this.state.touchActive) return {color: this.props.touchActive};
     return {color: 'black'};
   }
 
@@ -29,7 +29,7 @@ class FixStickyHover extends React.Component {
     this.setState({touchActive: true});
   }
 
-  handleTouchEnd(e) {
+  handleTouchEnd() {
     this.setState({
       touchActive: false,
       touchTimeStamp: new Date()
@@ -48,38 +48,29 @@ class FixStickyHover extends React.Component {
     this.setState({hover: false})
   }
 
-  handleMouseDown(e) {
+  handleMouseDown() {
     this.setState({active: true});
   }
 
-  handleMouseUp(e) {
+  handleMouseUp() {
     this.setState({active: false});
   }
 
 
   render() {
-    const title = this.props.title;
-    const description = this.props.description;
-    const id = title.replace(/ /g, '-').toLowerCase();
-
     return (
-      <div className="test">
-        <h2 id={id}>{title}</h2>
-          {description}
-        <div className="anchor-tag">
-          <a key="a" href={`#${id}`}
-            style={this.getStyle()}
-            onTouchStart={this.handleTouchStart}
-            onTouchEnd={this.handleTouchEnd}
-            onMouseEnter={this.handleMouseEnter}
-            onMouseLeave={this.handleMouseLeave}
-            onMouseDown={this.handleMouseDown}
-            onMouseUp={this.handleMouseUp}
-          >Anchor tag: hover is green, active is red, touch active is blue</a>
-        </div>
-      </div>
+      <this.props.tagType
+        style={this.getStyle()}
+        onTouchStart={this.handleTouchStart}
+        onTouchEnd={this.handleTouchEnd}
+        onMouseEnter={this.handleMouseEnter}
+        onMouseLeave={this.handleMouseLeave}
+        onMouseDown={this.handleMouseDown}
+        onMouseUp={this.handleMouseUp}
+        href={this.props.tagType === 'a' ? this.props.linkTo : null}
+      >{this.props.content}</this.props.tagType>
     );
   }
 }
 
-export default FixStickyHover;
+export default StickyHoverFix;
