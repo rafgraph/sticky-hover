@@ -2,13 +2,14 @@ import React from 'react';
 import { hasTouch } from 'detect-touch';
 import CssTest from './CssTest';
 import RadiumTest from './RadiumTest';
+import FixStickyHover from './FixStickyHover';
 
 
 function Tests() {
 
   return (
     <div className={hasTouch ? 'touch' : 'no-touch'}>
-      
+
       <CssTest title="Test 1" testClass="test-1" description={
           <div className="test-description">
             <code>:hover</code> and <code>:active</code> pseudo-classes applied
@@ -50,6 +51,12 @@ function Tests() {
           <div className="test-description">
             Radium inline <code>:hover</code> and <code>:active</code> styles.
           </div>
+      }/>
+
+      <FixStickyHover title="Test 7" description={
+        <div className="test-description">
+          Fix sticky hover.
+        </div>
       }/>
     </div>
   );

@@ -65,7 +65,7 @@
 	
 	var _Tests2 = _interopRequireDefault(_Tests);
 	
-	var _PageNotFound = __webpack_require__(/*! ./components/PageNotFound */ 289);
+	var _PageNotFound = __webpack_require__(/*! ./components/PageNotFound */ 291);
 	
 	var _PageNotFound2 = _interopRequireDefault(_PageNotFound);
 	
@@ -26163,13 +26163,17 @@
 	
 	var _detectTouch = __webpack_require__(/*! detect-touch */ 227);
 	
-	var _CssTest = __webpack_require__(/*! ./CssTest */ 291);
+	var _CssTest = __webpack_require__(/*! ./CssTest */ 228);
 	
 	var _CssTest2 = _interopRequireDefault(_CssTest);
 	
-	var _RadiumTest = __webpack_require__(/*! ./RadiumTest */ 288);
+	var _RadiumTest = __webpack_require__(/*! ./RadiumTest */ 229);
 	
 	var _RadiumTest2 = _interopRequireDefault(_RadiumTest);
+	
+	var _FixStickyHover = __webpack_require__(/*! ./FixStickyHover */ 290);
+	
+	var _FixStickyHover2 = _interopRequireDefault(_FixStickyHover);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -26304,6 +26308,11 @@
 	          ':active'
 	        ),
 	        ' styles.'
+	      ) }),
+	    _react2.default.createElement(_FixStickyHover2.default, { title: 'Test 7', description: _react2.default.createElement(
+	        'div',
+	        { className: 'test-description' },
+	        'Fix sticky hover.'
 	      ) })
 	  );
 	}
@@ -26336,6 +26345,127 @@
 
 /***/ },
 /* 228 */
+/*!********************************!*\
+  !*** ./components/CssTest.jsx ***!
+  \********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function CssTest(_ref) {
+	  var title = _ref.title;
+	  var testClass = _ref.testClass;
+	  var description = _ref.description;
+	
+	  return _react2.default.createElement(
+	    "div",
+	    { className: "test" },
+	    _react2.default.createElement(
+	      "h2",
+	      { id: testClass + "-title" },
+	      title
+	    ),
+	    description,
+	    _react2.default.createElement(
+	      "div",
+	      { className: "anchor-tag" },
+	      _react2.default.createElement(
+	        "a",
+	        { href: "#" + testClass + "-title", className: testClass },
+	        "Anchor tag: hover is green, active is red"
+	      )
+	    ),
+	    _react2.default.createElement(
+	      "div",
+	      { className: "button-tag" },
+	      _react2.default.createElement(
+	        "button",
+	        { className: testClass },
+	        "Button tag: hover is green, active is red"
+	      )
+	    )
+	  );
+	}
+	
+	exports.default = CssTest;
+
+/***/ },
+/* 229 */
+/*!***********************************!*\
+  !*** ./components/RadiumTest.jsx ***!
+  \***********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _radium = __webpack_require__(/*! radium */ 230);
+	
+	var _radium2 = _interopRequireDefault(_radium);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function RadiumTest(_ref) {
+	  var title = _ref.title;
+	  var description = _ref.description;
+	
+	  var id = title.replace(/ /g, '-').toLowerCase();
+	
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'test' },
+	    _react2.default.createElement(
+	      'h2',
+	      { id: id },
+	      title
+	    ),
+	    description,
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'anchor-tag' },
+	      _react2.default.createElement(
+	        'a',
+	        { key: 'a', href: '#' + id,
+	          style: { ':hover': { color: 'green' }, ':active': { color: 'red' } }
+	        },
+	        'Anchor tag: hover is green, active is red'
+	      )
+	    ),
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'button-tag' },
+	      _react2.default.createElement(
+	        'button',
+	        { key: 'b',
+	          style: { ':hover': { color: 'green' }, ':active': { color: 'red' } }
+	        },
+	        'Button tag: hover is green, active is red'
+	      )
+	    )
+	  );
+	}
+	
+	exports.default = (0, _radium2.default)(RadiumTest);
+
+/***/ },
+/* 230 */
 /*!*******************************!*\
   !*** ./~/radium/lib/index.js ***!
   \*******************************/
@@ -26347,31 +26477,31 @@
 	  value: true
 	});
 	
-	var _enhancer = __webpack_require__(/*! ./enhancer */ 229);
+	var _enhancer = __webpack_require__(/*! ./enhancer */ 231);
 	
 	var _enhancer2 = _interopRequireDefault(_enhancer);
 	
-	var _plugins = __webpack_require__(/*! ./plugins */ 274);
+	var _plugins = __webpack_require__(/*! ./plugins */ 276);
 	
 	var _plugins2 = _interopRequireDefault(_plugins);
 	
-	var _style = __webpack_require__(/*! ./components/style */ 284);
+	var _style = __webpack_require__(/*! ./components/style */ 286);
 	
 	var _style2 = _interopRequireDefault(_style);
 	
-	var _styleRoot = __webpack_require__(/*! ./components/style-root */ 285);
+	var _styleRoot = __webpack_require__(/*! ./components/style-root */ 287);
 	
 	var _styleRoot2 = _interopRequireDefault(_styleRoot);
 	
-	var _getState = __webpack_require__(/*! ./get-state */ 270);
+	var _getState = __webpack_require__(/*! ./get-state */ 272);
 	
 	var _getState2 = _interopRequireDefault(_getState);
 	
-	var _keyframes = __webpack_require__(/*! ./keyframes */ 287);
+	var _keyframes = __webpack_require__(/*! ./keyframes */ 289);
 	
 	var _keyframes2 = _interopRequireDefault(_keyframes);
 	
-	var _resolveStyles = __webpack_require__(/*! ./resolve-styles */ 231);
+	var _resolveStyles = __webpack_require__(/*! ./resolve-styles */ 233);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -26397,7 +26527,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 229 */
+/* 231 */
 /*!**********************************!*\
   !*** ./~/radium/lib/enhancer.js ***!
   \**********************************/
@@ -26417,11 +26547,11 @@
 	
 	var _react = __webpack_require__(/*! react */ 1);
 	
-	var _styleKeeper = __webpack_require__(/*! ./style-keeper.js */ 230);
+	var _styleKeeper = __webpack_require__(/*! ./style-keeper.js */ 232);
 	
 	var _styleKeeper2 = _interopRequireDefault(_styleKeeper);
 	
-	var _resolveStyles = __webpack_require__(/*! ./resolve-styles.js */ 231);
+	var _resolveStyles = __webpack_require__(/*! ./resolve-styles.js */ 233);
 	
 	var _resolveStyles2 = _interopRequireDefault(_resolveStyles);
 	
@@ -26584,7 +26714,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 230 */
+/* 232 */
 /*!**************************************!*\
   !*** ./~/radium/lib/style-keeper.js ***!
   \**************************************/
@@ -26659,7 +26789,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 231 */
+/* 233 */
 /*!****************************************!*\
   !*** ./~/radium/lib/resolve-styles.js ***!
   \****************************************/
@@ -26675,33 +26805,33 @@
 	
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 	
-	var _appendImportantToEachValue = __webpack_require__(/*! ./append-important-to-each-value */ 232);
+	var _appendImportantToEachValue = __webpack_require__(/*! ./append-important-to-each-value */ 234);
 	
 	var _appendImportantToEachValue2 = _interopRequireDefault(_appendImportantToEachValue);
 	
-	var _cssRuleSetToString = __webpack_require__(/*! ./css-rule-set-to-string */ 235);
+	var _cssRuleSetToString = __webpack_require__(/*! ./css-rule-set-to-string */ 237);
 	
 	var _cssRuleSetToString2 = _interopRequireDefault(_cssRuleSetToString);
 	
-	var _getState = __webpack_require__(/*! ./get-state */ 270);
+	var _getState = __webpack_require__(/*! ./get-state */ 272);
 	
 	var _getState2 = _interopRequireDefault(_getState);
 	
-	var _getStateKey = __webpack_require__(/*! ./get-state-key */ 271);
+	var _getStateKey = __webpack_require__(/*! ./get-state-key */ 273);
 	
 	var _getStateKey2 = _interopRequireDefault(_getStateKey);
 	
-	var _hash = __webpack_require__(/*! ./hash */ 272);
+	var _hash = __webpack_require__(/*! ./hash */ 274);
 	
 	var _hash2 = _interopRequireDefault(_hash);
 	
-	var _mergeStyles = __webpack_require__(/*! ./merge-styles */ 273);
+	var _mergeStyles = __webpack_require__(/*! ./merge-styles */ 275);
 	
-	var _plugins = __webpack_require__(/*! ./plugins/ */ 274);
+	var _plugins = __webpack_require__(/*! ./plugins/ */ 276);
 	
 	var _plugins2 = _interopRequireDefault(_plugins);
 	
-	var _exenv = __webpack_require__(/*! exenv */ 283);
+	var _exenv = __webpack_require__(/*! exenv */ 285);
 	
 	var _exenv2 = _interopRequireDefault(_exenv);
 	
@@ -27024,7 +27154,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 232 */
+/* 234 */
 /*!********************************************************!*\
   !*** ./~/radium/lib/append-important-to-each-value.js ***!
   \********************************************************/
@@ -27037,11 +27167,11 @@
 	});
 	exports.default = appendImportantToEachValue;
 	
-	var _appendPxIfNeeded = __webpack_require__(/*! ./append-px-if-needed */ 233);
+	var _appendPxIfNeeded = __webpack_require__(/*! ./append-px-if-needed */ 235);
 	
 	var _appendPxIfNeeded2 = _interopRequireDefault(_appendPxIfNeeded);
 	
-	var _mapObject = __webpack_require__(/*! ./map-object */ 234);
+	var _mapObject = __webpack_require__(/*! ./map-object */ 236);
 	
 	var _mapObject2 = _interopRequireDefault(_mapObject);
 	
@@ -27055,7 +27185,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 233 */
+/* 235 */
 /*!*********************************************!*\
   !*** ./~/radium/lib/append-px-if-needed.js ***!
   \*********************************************/
@@ -27112,7 +27242,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 234 */
+/* 236 */
 /*!************************************!*\
   !*** ./~/radium/lib/map-object.js ***!
   \************************************/
@@ -27133,7 +27263,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 235 */
+/* 237 */
 /*!************************************************!*\
   !*** ./~/radium/lib/css-rule-set-to-string.js ***!
   \************************************************/
@@ -27146,19 +27276,19 @@
 	});
 	exports.default = cssRuleSetToString;
 	
-	var _appendPxIfNeeded = __webpack_require__(/*! ./append-px-if-needed */ 233);
+	var _appendPxIfNeeded = __webpack_require__(/*! ./append-px-if-needed */ 235);
 	
 	var _appendPxIfNeeded2 = _interopRequireDefault(_appendPxIfNeeded);
 	
-	var _camelCasePropsToDashCase = __webpack_require__(/*! ./camel-case-props-to-dash-case */ 236);
+	var _camelCasePropsToDashCase = __webpack_require__(/*! ./camel-case-props-to-dash-case */ 238);
 	
 	var _camelCasePropsToDashCase2 = _interopRequireDefault(_camelCasePropsToDashCase);
 	
-	var _mapObject = __webpack_require__(/*! ./map-object */ 234);
+	var _mapObject = __webpack_require__(/*! ./map-object */ 236);
 	
 	var _mapObject2 = _interopRequireDefault(_mapObject);
 	
-	var _prefixer = __webpack_require__(/*! ./prefixer */ 237);
+	var _prefixer = __webpack_require__(/*! ./prefixer */ 239);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -27185,7 +27315,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 236 */
+/* 238 */
 /*!*******************************************************!*\
   !*** ./~/radium/lib/camel-case-props-to-dash-case.js ***!
   \*******************************************************/
@@ -27228,7 +27358,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 237 */
+/* 239 */
 /*!**********************************!*\
   !*** ./~/radium/lib/prefixer.js ***!
   \**********************************/
@@ -27250,7 +27380,7 @@
 	exports.getPrefixedKeyframes = getPrefixedKeyframes;
 	exports.getPrefixedStyle = getPrefixedStyle;
 	
-	var _inlineStylePrefixer = __webpack_require__(/*! inline-style-prefixer */ 238);
+	var _inlineStylePrefixer = __webpack_require__(/*! inline-style-prefixer */ 240);
 	
 	var _inlineStylePrefixer2 = _interopRequireDefault(_inlineStylePrefixer);
 	
@@ -27315,7 +27445,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 238 */
+/* 240 */
 /*!*************************************************!*\
   !*** ./~/inline-style-prefixer/lib/Prefixer.js ***!
   \*************************************************/
@@ -27333,61 +27463,61 @@
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 	
-	var _inlineStylePrefixAll = __webpack_require__(/*! inline-style-prefix-all */ 239);
+	var _inlineStylePrefixAll = __webpack_require__(/*! inline-style-prefix-all */ 241);
 	
 	var _inlineStylePrefixAll2 = _interopRequireDefault(_inlineStylePrefixAll);
 	
-	var _utilsGetBrowserInformation = __webpack_require__(/*! ./utils/getBrowserInformation */ 254);
+	var _utilsGetBrowserInformation = __webpack_require__(/*! ./utils/getBrowserInformation */ 256);
 	
 	var _utilsGetBrowserInformation2 = _interopRequireDefault(_utilsGetBrowserInformation);
 	
-	var _utilsGetPrefixedKeyframes = __webpack_require__(/*! ./utils/getPrefixedKeyframes */ 256);
+	var _utilsGetPrefixedKeyframes = __webpack_require__(/*! ./utils/getPrefixedKeyframes */ 258);
 	
 	var _utilsGetPrefixedKeyframes2 = _interopRequireDefault(_utilsGetPrefixedKeyframes);
 	
-	var _utilsCapitalizeString = __webpack_require__(/*! ./utils/capitalizeString */ 257);
+	var _utilsCapitalizeString = __webpack_require__(/*! ./utils/capitalizeString */ 259);
 	
 	var _utilsCapitalizeString2 = _interopRequireDefault(_utilsCapitalizeString);
 	
-	var _utilsAssign = __webpack_require__(/*! ./utils/assign */ 258);
+	var _utilsAssign = __webpack_require__(/*! ./utils/assign */ 260);
 	
 	var _utilsAssign2 = _interopRequireDefault(_utilsAssign);
 	
-	var _prefixProps = __webpack_require__(/*! ./prefixProps */ 259);
+	var _prefixProps = __webpack_require__(/*! ./prefixProps */ 261);
 	
 	var _prefixProps2 = _interopRequireDefault(_prefixProps);
 	
-	var _pluginsCalc = __webpack_require__(/*! ./plugins/calc */ 260);
+	var _pluginsCalc = __webpack_require__(/*! ./plugins/calc */ 262);
 	
 	var _pluginsCalc2 = _interopRequireDefault(_pluginsCalc);
 	
-	var _pluginsCursor = __webpack_require__(/*! ./plugins/cursor */ 262);
+	var _pluginsCursor = __webpack_require__(/*! ./plugins/cursor */ 264);
 	
 	var _pluginsCursor2 = _interopRequireDefault(_pluginsCursor);
 	
-	var _pluginsFlex = __webpack_require__(/*! ./plugins/flex */ 263);
+	var _pluginsFlex = __webpack_require__(/*! ./plugins/flex */ 265);
 	
 	var _pluginsFlex2 = _interopRequireDefault(_pluginsFlex);
 	
-	var _pluginsSizing = __webpack_require__(/*! ./plugins/sizing */ 264);
+	var _pluginsSizing = __webpack_require__(/*! ./plugins/sizing */ 266);
 	
 	var _pluginsSizing2 = _interopRequireDefault(_pluginsSizing);
 	
-	var _pluginsGradient = __webpack_require__(/*! ./plugins/gradient */ 265);
+	var _pluginsGradient = __webpack_require__(/*! ./plugins/gradient */ 267);
 	
 	var _pluginsGradient2 = _interopRequireDefault(_pluginsGradient);
 	
-	var _pluginsTransition = __webpack_require__(/*! ./plugins/transition */ 266);
+	var _pluginsTransition = __webpack_require__(/*! ./plugins/transition */ 268);
 	
 	var _pluginsTransition2 = _interopRequireDefault(_pluginsTransition);
 	
 	// special flexbox specifications
 	
-	var _pluginsFlexboxIE = __webpack_require__(/*! ./plugins/flexboxIE */ 268);
+	var _pluginsFlexboxIE = __webpack_require__(/*! ./plugins/flexboxIE */ 270);
 	
 	var _pluginsFlexboxIE2 = _interopRequireDefault(_pluginsFlexboxIE);
 	
-	var _pluginsFlexboxOld = __webpack_require__(/*! ./plugins/flexboxOld */ 269);
+	var _pluginsFlexboxOld = __webpack_require__(/*! ./plugins/flexboxOld */ 271);
 	
 	var _pluginsFlexboxOld2 = _interopRequireDefault(_pluginsFlexboxOld);
 	
@@ -27521,7 +27651,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 239 */
+/* 241 */
 /*!****************************************************!*\
   !*** ./~/inline-style-prefix-all/lib/prefixAll.js ***!
   \****************************************************/
@@ -27536,49 +27666,49 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _prefixProps = __webpack_require__(/*! ./prefixProps */ 240);
+	var _prefixProps = __webpack_require__(/*! ./prefixProps */ 242);
 	
 	var _prefixProps2 = _interopRequireDefault(_prefixProps);
 	
-	var _utilsCapitalizeString = __webpack_require__(/*! ./utils/capitalizeString */ 241);
+	var _utilsCapitalizeString = __webpack_require__(/*! ./utils/capitalizeString */ 243);
 	
 	var _utilsCapitalizeString2 = _interopRequireDefault(_utilsCapitalizeString);
 	
-	var _utilsAssign = __webpack_require__(/*! ./utils/assign */ 242);
+	var _utilsAssign = __webpack_require__(/*! ./utils/assign */ 244);
 	
 	var _utilsAssign2 = _interopRequireDefault(_utilsAssign);
 	
-	var _pluginsCalc = __webpack_require__(/*! ./plugins/calc */ 243);
+	var _pluginsCalc = __webpack_require__(/*! ./plugins/calc */ 245);
 	
 	var _pluginsCalc2 = _interopRequireDefault(_pluginsCalc);
 	
-	var _pluginsCursor = __webpack_require__(/*! ./plugins/cursor */ 247);
+	var _pluginsCursor = __webpack_require__(/*! ./plugins/cursor */ 249);
 	
 	var _pluginsCursor2 = _interopRequireDefault(_pluginsCursor);
 	
-	var _pluginsFlex = __webpack_require__(/*! ./plugins/flex */ 248);
+	var _pluginsFlex = __webpack_require__(/*! ./plugins/flex */ 250);
 	
 	var _pluginsFlex2 = _interopRequireDefault(_pluginsFlex);
 	
-	var _pluginsSizing = __webpack_require__(/*! ./plugins/sizing */ 249);
+	var _pluginsSizing = __webpack_require__(/*! ./plugins/sizing */ 251);
 	
 	var _pluginsSizing2 = _interopRequireDefault(_pluginsSizing);
 	
-	var _pluginsGradient = __webpack_require__(/*! ./plugins/gradient */ 250);
+	var _pluginsGradient = __webpack_require__(/*! ./plugins/gradient */ 252);
 	
 	var _pluginsGradient2 = _interopRequireDefault(_pluginsGradient);
 	
-	var _pluginsTransition = __webpack_require__(/*! ./plugins/transition */ 251);
+	var _pluginsTransition = __webpack_require__(/*! ./plugins/transition */ 253);
 	
 	var _pluginsTransition2 = _interopRequireDefault(_pluginsTransition);
 	
 	// special flexbox specifications
 	
-	var _pluginsFlexboxIE = __webpack_require__(/*! ./plugins/flexboxIE */ 252);
+	var _pluginsFlexboxIE = __webpack_require__(/*! ./plugins/flexboxIE */ 254);
 	
 	var _pluginsFlexboxIE2 = _interopRequireDefault(_pluginsFlexboxIE);
 	
-	var _pluginsFlexboxOld = __webpack_require__(/*! ./plugins/flexboxOld */ 253);
+	var _pluginsFlexboxOld = __webpack_require__(/*! ./plugins/flexboxOld */ 255);
 	
 	var _pluginsFlexboxOld2 = _interopRequireDefault(_pluginsFlexboxOld);
 	
@@ -27618,7 +27748,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 240 */
+/* 242 */
 /*!******************************************************!*\
   !*** ./~/inline-style-prefix-all/lib/prefixProps.js ***!
   \******************************************************/
@@ -27633,7 +27763,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 241 */
+/* 243 */
 /*!*****************************************************************!*\
   !*** ./~/inline-style-prefix-all/lib/utils/capitalizeString.js ***!
   \*****************************************************************/
@@ -27653,7 +27783,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 242 */
+/* 244 */
 /*!*******************************************************!*\
   !*** ./~/inline-style-prefix-all/lib/utils/assign.js ***!
   \*******************************************************/
@@ -27677,7 +27807,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 243 */
+/* 245 */
 /*!*******************************************************!*\
   !*** ./~/inline-style-prefix-all/lib/plugins/calc.js ***!
   \*******************************************************/
@@ -27692,11 +27822,11 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _utilsJoinPrefixedRules = __webpack_require__(/*! ../utils/joinPrefixedRules */ 244);
+	var _utilsJoinPrefixedRules = __webpack_require__(/*! ../utils/joinPrefixedRules */ 246);
 	
 	var _utilsJoinPrefixedRules2 = _interopRequireDefault(_utilsJoinPrefixedRules);
 	
-	var _utilsIsPrefixedValue = __webpack_require__(/*! ../utils/isPrefixedValue */ 246);
+	var _utilsIsPrefixedValue = __webpack_require__(/*! ../utils/isPrefixedValue */ 248);
 	
 	var _utilsIsPrefixedValue2 = _interopRequireDefault(_utilsIsPrefixedValue);
 	
@@ -27713,7 +27843,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 244 */
+/* 246 */
 /*!******************************************************************!*\
   !*** ./~/inline-style-prefix-all/lib/utils/joinPrefixedRules.js ***!
   \******************************************************************/
@@ -27729,7 +27859,7 @@
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
-	var _camelToDashCase = __webpack_require__(/*! ./camelToDashCase */ 245);
+	var _camelToDashCase = __webpack_require__(/*! ./camelToDashCase */ 247);
 	
 	var _camelToDashCase2 = _interopRequireDefault(_camelToDashCase);
 	
@@ -27749,7 +27879,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 245 */
+/* 247 */
 /*!****************************************************************!*\
   !*** ./~/inline-style-prefix-all/lib/utils/camelToDashCase.js ***!
   \****************************************************************/
@@ -27774,7 +27904,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 246 */
+/* 248 */
 /*!****************************************************************!*\
   !*** ./~/inline-style-prefix-all/lib/utils/isPrefixedValue.js ***!
   \****************************************************************/
@@ -27795,7 +27925,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 247 */
+/* 249 */
 /*!*********************************************************!*\
   !*** ./~/inline-style-prefix-all/lib/plugins/cursor.js ***!
   \*********************************************************/
@@ -27810,7 +27940,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _utilsJoinPrefixedRules = __webpack_require__(/*! ../utils/joinPrefixedRules */ 244);
+	var _utilsJoinPrefixedRules = __webpack_require__(/*! ../utils/joinPrefixedRules */ 246);
 	
 	var _utilsJoinPrefixedRules2 = _interopRequireDefault(_utilsJoinPrefixedRules);
 	
@@ -27830,7 +27960,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 248 */
+/* 250 */
 /*!*******************************************************!*\
   !*** ./~/inline-style-prefix-all/lib/plugins/flex.js ***!
   \*******************************************************/
@@ -27845,7 +27975,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 245);
+	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 247);
 	
 	var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 	
@@ -27862,7 +27992,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 249 */
+/* 251 */
 /*!*********************************************************!*\
   !*** ./~/inline-style-prefix-all/lib/plugins/sizing.js ***!
   \*********************************************************/
@@ -27877,7 +28007,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _utilsJoinPrefixedRules = __webpack_require__(/*! ../utils/joinPrefixedRules */ 244);
+	var _utilsJoinPrefixedRules = __webpack_require__(/*! ../utils/joinPrefixedRules */ 246);
 	
 	var _utilsJoinPrefixedRules2 = _interopRequireDefault(_utilsJoinPrefixedRules);
 	
@@ -27907,7 +28037,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 250 */
+/* 252 */
 /*!***********************************************************!*\
   !*** ./~/inline-style-prefix-all/lib/plugins/gradient.js ***!
   \***********************************************************/
@@ -27922,11 +28052,11 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _utilsJoinPrefixedRules = __webpack_require__(/*! ../utils/joinPrefixedRules */ 244);
+	var _utilsJoinPrefixedRules = __webpack_require__(/*! ../utils/joinPrefixedRules */ 246);
 	
 	var _utilsJoinPrefixedRules2 = _interopRequireDefault(_utilsJoinPrefixedRules);
 	
-	var _utilsIsPrefixedValue = __webpack_require__(/*! ../utils/isPrefixedValue */ 246);
+	var _utilsIsPrefixedValue = __webpack_require__(/*! ../utils/isPrefixedValue */ 248);
 	
 	var _utilsIsPrefixedValue2 = _interopRequireDefault(_utilsIsPrefixedValue);
 	
@@ -27943,7 +28073,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 251 */
+/* 253 */
 /*!*************************************************************!*\
   !*** ./~/inline-style-prefix-all/lib/plugins/transition.js ***!
   \*************************************************************/
@@ -27960,19 +28090,19 @@
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
-	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 245);
+	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 247);
 	
 	var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 	
-	var _utilsCapitalizeString = __webpack_require__(/*! ../utils/capitalizeString */ 241);
+	var _utilsCapitalizeString = __webpack_require__(/*! ../utils/capitalizeString */ 243);
 	
 	var _utilsCapitalizeString2 = _interopRequireDefault(_utilsCapitalizeString);
 	
-	var _utilsIsPrefixedValue = __webpack_require__(/*! ../utils/isPrefixedValue */ 246);
+	var _utilsIsPrefixedValue = __webpack_require__(/*! ../utils/isPrefixedValue */ 248);
 	
 	var _utilsIsPrefixedValue2 = _interopRequireDefault(_utilsIsPrefixedValue);
 	
-	var _prefixProps = __webpack_require__(/*! ../prefixProps */ 240);
+	var _prefixProps = __webpack_require__(/*! ../prefixProps */ 242);
 	
 	var _prefixProps2 = _interopRequireDefault(_prefixProps);
 	
@@ -28033,7 +28163,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 252 */
+/* 254 */
 /*!************************************************************!*\
   !*** ./~/inline-style-prefix-all/lib/plugins/flexboxIE.js ***!
   \************************************************************/
@@ -28074,7 +28204,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 253 */
+/* 255 */
 /*!*************************************************************!*\
   !*** ./~/inline-style-prefix-all/lib/plugins/flexboxOld.js ***!
   \*************************************************************/
@@ -28091,7 +28221,7 @@
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
-	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 245);
+	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 247);
 	
 	var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 	
@@ -28125,7 +28255,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 254 */
+/* 256 */
 /*!********************************************************************!*\
   !*** ./~/inline-style-prefixer/lib/utils/getBrowserInformation.js ***!
   \********************************************************************/
@@ -28139,7 +28269,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _bowser = __webpack_require__(/*! bowser */ 255);
+	var _bowser = __webpack_require__(/*! bowser */ 257);
 	
 	var _bowser2 = _interopRequireDefault(_bowser);
 	
@@ -28226,7 +28356,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 255 */
+/* 257 */
 /*!********************************!*\
   !*** ./~/bowser/src/bowser.js ***!
   \********************************/
@@ -28653,7 +28783,7 @@
 
 
 /***/ },
-/* 256 */
+/* 258 */
 /*!*******************************************************************!*\
   !*** ./~/inline-style-prefixer/lib/utils/getPrefixedKeyframes.js ***!
   \*******************************************************************/
@@ -28681,7 +28811,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 257 */
+/* 259 */
 /*!***************************************************************!*\
   !*** ./~/inline-style-prefixer/lib/utils/capitalizeString.js ***!
   \***************************************************************/
@@ -28701,7 +28831,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 258 */
+/* 260 */
 /*!*****************************************************!*\
   !*** ./~/inline-style-prefixer/lib/utils/assign.js ***!
   \*****************************************************/
@@ -28726,7 +28856,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 259 */
+/* 261 */
 /*!****************************************************!*\
   !*** ./~/inline-style-prefixer/lib/prefixProps.js ***!
   \****************************************************/
@@ -28741,7 +28871,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 260 */
+/* 262 */
 /*!*****************************************************!*\
   !*** ./~/inline-style-prefixer/lib/plugins/calc.js ***!
   \*****************************************************/
@@ -28758,7 +28888,7 @@
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
-	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 261);
+	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 263);
 	
 	var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 	
@@ -28779,7 +28909,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 261 */
+/* 263 */
 /*!**************************************************************!*\
   !*** ./~/inline-style-prefixer/lib/utils/camelToDashCase.js ***!
   \**************************************************************/
@@ -28804,7 +28934,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 262 */
+/* 264 */
 /*!*******************************************************!*\
   !*** ./~/inline-style-prefixer/lib/plugins/cursor.js ***!
   \*******************************************************/
@@ -28819,7 +28949,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 261);
+	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 263);
 	
 	var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 	
@@ -28849,7 +28979,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 263 */
+/* 265 */
 /*!*****************************************************!*\
   !*** ./~/inline-style-prefixer/lib/plugins/flex.js ***!
   \*****************************************************/
@@ -28864,7 +28994,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 261);
+	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 263);
 	
 	var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 	
@@ -28892,7 +29022,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 264 */
+/* 266 */
 /*!*******************************************************!*\
   !*** ./~/inline-style-prefixer/lib/plugins/sizing.js ***!
   \*******************************************************/
@@ -28909,7 +29039,7 @@
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
-	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 261);
+	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 263);
 	
 	var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 	
@@ -28946,7 +29076,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 265 */
+/* 267 */
 /*!*********************************************************!*\
   !*** ./~/inline-style-prefixer/lib/plugins/gradient.js ***!
   \*********************************************************/
@@ -28963,7 +29093,7 @@
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
-	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 261);
+	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 263);
 	
 	var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 	
@@ -28986,7 +29116,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 266 */
+/* 268 */
 /*!***********************************************************!*\
   !*** ./~/inline-style-prefixer/lib/plugins/transition.js ***!
   \***********************************************************/
@@ -29003,15 +29133,15 @@
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
-	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 261);
+	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 263);
 	
 	var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 	
-	var _utilsCapitalizeString = __webpack_require__(/*! ../utils/capitalizeString */ 257);
+	var _utilsCapitalizeString = __webpack_require__(/*! ../utils/capitalizeString */ 259);
 	
 	var _utilsCapitalizeString2 = _interopRequireDefault(_utilsCapitalizeString);
 	
-	var _utilsUnprefixProperty = __webpack_require__(/*! ../utils/unprefixProperty */ 267);
+	var _utilsUnprefixProperty = __webpack_require__(/*! ../utils/unprefixProperty */ 269);
 	
 	var _utilsUnprefixProperty2 = _interopRequireDefault(_utilsUnprefixProperty);
 	
@@ -29055,7 +29185,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 267 */
+/* 269 */
 /*!***************************************************************!*\
   !*** ./~/inline-style-prefixer/lib/utils/unprefixProperty.js ***!
   \***************************************************************/
@@ -29075,7 +29205,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 268 */
+/* 270 */
 /*!**********************************************************!*\
   !*** ./~/inline-style-prefixer/lib/plugins/flexboxIE.js ***!
   \**********************************************************/
@@ -29092,7 +29222,7 @@
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
-	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 261);
+	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 263);
 	
 	var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 	
@@ -29148,7 +29278,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 269 */
+/* 271 */
 /*!***********************************************************!*\
   !*** ./~/inline-style-prefixer/lib/plugins/flexboxOld.js ***!
   \***********************************************************/
@@ -29165,7 +29295,7 @@
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
-	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 261);
+	var _utilsCamelToDashCase = __webpack_require__(/*! ../utils/camelToDashCase */ 263);
 	
 	var _utilsCamelToDashCase2 = _interopRequireDefault(_utilsCamelToDashCase);
 	
@@ -29227,7 +29357,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 270 */
+/* 272 */
 /*!***********************************!*\
   !*** ./~/radium/lib/get-state.js ***!
   \***********************************/
@@ -29239,7 +29369,7 @@
 	  value: true
 	});
 	
-	var _getStateKey = __webpack_require__(/*! ./get-state-key */ 271);
+	var _getStateKey = __webpack_require__(/*! ./get-state-key */ 273);
 	
 	var _getStateKey2 = _interopRequireDefault(_getStateKey);
 	
@@ -29255,7 +29385,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 271 */
+/* 273 */
 /*!***************************************!*\
   !*** ./~/radium/lib/get-state-key.js ***!
   \***************************************/
@@ -29276,7 +29406,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 272 */
+/* 274 */
 /*!******************************!*\
   !*** ./~/radium/lib/hash.js ***!
   \******************************/
@@ -29311,7 +29441,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 273 */
+/* 275 */
 /*!**************************************!*\
   !*** ./~/radium/lib/merge-styles.js ***!
   \**************************************/
@@ -29378,7 +29508,7 @@
 	}
 
 /***/ },
-/* 274 */
+/* 276 */
 /*!***************************************!*\
   !*** ./~/radium/lib/plugins/index.js ***!
   \***************************************/
@@ -29390,31 +29520,31 @@
 	  value: true
 	});
 	
-	var _checkPropsPlugin = __webpack_require__(/*! ./check-props-plugin */ 275);
+	var _checkPropsPlugin = __webpack_require__(/*! ./check-props-plugin */ 277);
 	
 	var _checkPropsPlugin2 = _interopRequireDefault(_checkPropsPlugin);
 	
-	var _keyframesPlugin = __webpack_require__(/*! ./keyframes-plugin */ 276);
+	var _keyframesPlugin = __webpack_require__(/*! ./keyframes-plugin */ 278);
 	
 	var _keyframesPlugin2 = _interopRequireDefault(_keyframesPlugin);
 	
-	var _mergeStyleArrayPlugin = __webpack_require__(/*! ./merge-style-array-plugin */ 277);
+	var _mergeStyleArrayPlugin = __webpack_require__(/*! ./merge-style-array-plugin */ 279);
 	
 	var _mergeStyleArrayPlugin2 = _interopRequireDefault(_mergeStyleArrayPlugin);
 	
-	var _prefixPlugin = __webpack_require__(/*! ./prefix-plugin */ 278);
+	var _prefixPlugin = __webpack_require__(/*! ./prefix-plugin */ 280);
 	
 	var _prefixPlugin2 = _interopRequireDefault(_prefixPlugin);
 	
-	var _resolveInteractionStylesPlugin = __webpack_require__(/*! ./resolve-interaction-styles-plugin */ 279);
+	var _resolveInteractionStylesPlugin = __webpack_require__(/*! ./resolve-interaction-styles-plugin */ 281);
 	
 	var _resolveInteractionStylesPlugin2 = _interopRequireDefault(_resolveInteractionStylesPlugin);
 	
-	var _resolveMediaQueriesPlugin = __webpack_require__(/*! ./resolve-media-queries-plugin */ 281);
+	var _resolveMediaQueriesPlugin = __webpack_require__(/*! ./resolve-media-queries-plugin */ 283);
 	
 	var _resolveMediaQueriesPlugin2 = _interopRequireDefault(_resolveMediaQueriesPlugin);
 	
-	var _visitedPlugin = __webpack_require__(/*! ./visited-plugin */ 282);
+	var _visitedPlugin = __webpack_require__(/*! ./visited-plugin */ 284);
 	
 	var _visitedPlugin2 = _interopRequireDefault(_visitedPlugin);
 	
@@ -29434,7 +29564,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 275 */
+/* 277 */
 /*!****************************************************!*\
   !*** ./~/radium/lib/plugins/check-props-plugin.js ***!
   \****************************************************/
@@ -29503,7 +29633,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 276 */
+/* 278 */
 /*!**************************************************!*\
   !*** ./~/radium/lib/plugins/keyframes-plugin.js ***!
   \**************************************************/
@@ -29543,7 +29673,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 277 */
+/* 279 */
 /*!**********************************************************!*\
   !*** ./~/radium/lib/plugins/merge-style-array-plugin.js ***!
   \**********************************************************/
@@ -29570,7 +29700,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 278 */
+/* 280 */
 /*!***********************************************!*\
   !*** ./~/radium/lib/plugins/prefix-plugin.js ***!
   \***********************************************/
@@ -29583,7 +29713,7 @@
 	});
 	exports.default = prefixPlugin;
 	
-	var _prefixer = __webpack_require__(/*! ../prefixer */ 237);
+	var _prefixer = __webpack_require__(/*! ../prefixer */ 239);
 	
 	function prefixPlugin(_ref // eslint-disable-line no-shadow
 	) {
@@ -29596,7 +29726,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 279 */
+/* 281 */
 /*!*******************************************************************!*\
   !*** ./~/radium/lib/plugins/resolve-interaction-styles-plugin.js ***!
   \*******************************************************************/
@@ -29608,7 +29738,7 @@
 	  value: true
 	});
 	
-	var _mouseUpListener = __webpack_require__(/*! ./mouse-up-listener */ 280);
+	var _mouseUpListener = __webpack_require__(/*! ./mouse-up-listener */ 282);
 	
 	var _mouseUpListener2 = _interopRequireDefault(_mouseUpListener);
 	
@@ -29732,7 +29862,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 280 */
+/* 282 */
 /*!***************************************************!*\
   !*** ./~/radium/lib/plugins/mouse-up-listener.js ***!
   \***************************************************/
@@ -29784,7 +29914,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 281 */
+/* 283 */
 /*!**************************************************************!*\
   !*** ./~/radium/lib/plugins/resolve-media-queries-plugin.js ***!
   \**************************************************************/
@@ -29968,7 +30098,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 282 */
+/* 284 */
 /*!************************************************!*\
   !*** ./~/radium/lib/plugins/visited-plugin.js ***!
   \************************************************/
@@ -30016,7 +30146,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 283 */
+/* 285 */
 /*!**************************!*\
   !*** ./~/exenv/index.js ***!
   \**************************/
@@ -30065,7 +30195,7 @@
 
 
 /***/ },
-/* 284 */
+/* 286 */
 /*!******************************************!*\
   !*** ./~/radium/lib/components/style.js ***!
   \******************************************/
@@ -30079,7 +30209,7 @@
 	
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 	
-	var _cssRuleSetToString = __webpack_require__(/*! ../css-rule-set-to-string */ 235);
+	var _cssRuleSetToString = __webpack_require__(/*! ../css-rule-set-to-string */ 237);
 	
 	var _cssRuleSetToString2 = _interopRequireDefault(_cssRuleSetToString);
 	
@@ -30165,7 +30295,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 285 */
+/* 287 */
 /*!***********************************************!*\
   !*** ./~/radium/lib/components/style-root.js ***!
   \***********************************************/
@@ -30181,15 +30311,15 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _enhancer = __webpack_require__(/*! ../enhancer */ 229);
+	var _enhancer = __webpack_require__(/*! ../enhancer */ 231);
 	
 	var _enhancer2 = _interopRequireDefault(_enhancer);
 	
-	var _styleKeeper = __webpack_require__(/*! ../style-keeper */ 230);
+	var _styleKeeper = __webpack_require__(/*! ../style-keeper */ 232);
 	
 	var _styleKeeper2 = _interopRequireDefault(_styleKeeper);
 	
-	var _styleSheet = __webpack_require__(/*! ./style-sheet */ 286);
+	var _styleSheet = __webpack_require__(/*! ./style-sheet */ 288);
 	
 	var _styleSheet2 = _interopRequireDefault(_styleSheet);
 	
@@ -30253,7 +30383,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 286 */
+/* 288 */
 /*!************************************************!*\
   !*** ./~/radium/lib/components/style-sheet.js ***!
   \************************************************/
@@ -30272,7 +30402,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _styleKeeper = __webpack_require__(/*! ../style-keeper */ 230);
+	var _styleKeeper = __webpack_require__(/*! ../style-keeper */ 232);
 	
 	var _styleKeeper2 = _interopRequireDefault(_styleKeeper);
 	
@@ -30335,7 +30465,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 287 */
+/* 289 */
 /*!***********************************!*\
   !*** ./~/radium/lib/keyframes.js ***!
   \***********************************/
@@ -30348,15 +30478,15 @@
 	});
 	exports.default = keyframes;
 	
-	var _cssRuleSetToString = __webpack_require__(/*! ./css-rule-set-to-string */ 235);
+	var _cssRuleSetToString = __webpack_require__(/*! ./css-rule-set-to-string */ 237);
 	
 	var _cssRuleSetToString2 = _interopRequireDefault(_cssRuleSetToString);
 	
-	var _hash = __webpack_require__(/*! ./hash */ 272);
+	var _hash = __webpack_require__(/*! ./hash */ 274);
 	
 	var _hash2 = _interopRequireDefault(_hash);
 	
-	var _prefixer = __webpack_require__(/*! ./prefixer */ 237);
+	var _prefixer = __webpack_require__(/*! ./prefixer */ 239);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -30377,10 +30507,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 288 */
-/*!***********************************!*\
-  !*** ./components/RadiumTest.jsx ***!
-  \***********************************/
+/* 290 */
+/*!***************************************!*\
+  !*** ./components/FixStickyHover.jsx ***!
+  \***************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30389,60 +30519,133 @@
 	  value: true
 	});
 	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
 	var _react = __webpack_require__(/*! react */ 1);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _radium = __webpack_require__(/*! radium */ 228);
-	
-	var _radium2 = _interopRequireDefault(_radium);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	function RadiumTest(_ref) {
-	  var title = _ref.title;
-	  var description = _ref.description;
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
-	  var id = title.replace(/ /g, '-').toLowerCase();
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
-	  return _react2.default.createElement(
-	    'div',
-	    { className: 'test' },
-	    _react2.default.createElement(
-	      'h2',
-	      { id: id },
-	      title
-	    ),
-	    description,
-	    _react2.default.createElement(
-	      'div',
-	      { className: 'anchor-tag' },
-	      _react2.default.createElement(
-	        'a',
-	        { key: 'a', href: '#' + id,
-	          style: { ':hover': { color: 'green' }, ':active': { color: 'red' } }
-	        },
-	        'Anchor tag: hover is green, active is red'
-	      )
-	    ),
-	    _react2.default.createElement(
-	      'div',
-	      { className: 'button-tag' },
-	      _react2.default.createElement(
-	        'button',
-	        { key: 'b',
-	          style: { ':hover': { color: 'green' }, ':active': { color: 'red' } }
-	        },
-	        'Button tag: hover is green, active is red'
-	      )
-	    )
-	  );
-	}
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	exports.default = (0, _radium2.default)(RadiumTest);
+	var FixStickyHover = function (_React$Component) {
+	  _inherits(FixStickyHover, _React$Component);
+	
+	  function FixStickyHover(props) {
+	    _classCallCheck(this, FixStickyHover);
+	
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(FixStickyHover).call(this, props));
+	
+	    _this.state = {
+	      hover: false,
+	      active: false,
+	      touchActive: false,
+	      touchTimeStamp: new Date()
+	    };
+	    _this.getStyle = _this.getStyle.bind(_this);
+	    _this.handleTouchStart = _this.handleTouchStart.bind(_this);
+	    _this.handleTouchEnd = _this.handleTouchEnd.bind(_this);
+	    _this.handleMouseEnter = _this.handleMouseEnter.bind(_this);
+	    _this.handleMouseLeave = _this.handleMouseLeave.bind(_this);
+	    _this.handleMouseDown = _this.handleMouseDown.bind(_this);
+	    _this.handleMouseUp = _this.handleMouseUp.bind(_this);
+	    return _this;
+	  }
+	
+	  _createClass(FixStickyHover, [{
+	    key: 'getStyle',
+	    value: function getStyle() {
+	      if (this.state.active) return { color: 'red' };
+	      if (this.state.hover) return { color: 'green' };
+	      if (this.state.touchActive) return { color: 'blue' };
+	      return { color: 'black' };
+	    }
+	  }, {
+	    key: 'handleTouchStart',
+	    value: function handleTouchStart() {
+	      this.setState({ touchActive: true });
+	    }
+	  }, {
+	    key: 'handleTouchEnd',
+	    value: function handleTouchEnd(e) {
+	      this.setState({
+	        touchActive: false,
+	        touchTimeStamp: new Date()
+	      });
+	    }
+	  }, {
+	    key: 'handleMouseEnter',
+	    value: function handleMouseEnter() {
+	      // arbitrary 250 ms leeway for mouseEnter event to fire after
+	      // touchEnd event
+	      if (new Date() - this.state.touchTimeStamp > 250) {
+	        this.setState({ hover: true });
+	      }
+	    }
+	  }, {
+	    key: 'handleMouseLeave',
+	    value: function handleMouseLeave() {
+	      this.setState({ hover: false });
+	    }
+	  }, {
+	    key: 'handleMouseDown',
+	    value: function handleMouseDown(e) {
+	      this.setState({ active: true });
+	    }
+	  }, {
+	    key: 'handleMouseUp',
+	    value: function handleMouseUp(e) {
+	      this.setState({ active: false });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var title = this.props.title;
+	      var description = this.props.description;
+	      var id = title.replace(/ /g, '-').toLowerCase();
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'test' },
+	        _react2.default.createElement(
+	          'h2',
+	          { id: id },
+	          title
+	        ),
+	        description,
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'anchor-tag' },
+	          _react2.default.createElement(
+	            'a',
+	            { key: 'a', href: '#' + id,
+	              style: this.getStyle(),
+	              onTouchStart: this.handleTouchStart,
+	              onTouchEnd: this.handleTouchEnd,
+	              onMouseEnter: this.handleMouseEnter,
+	              onMouseLeave: this.handleMouseLeave,
+	              onMouseDown: this.handleMouseDown,
+	              onMouseUp: this.handleMouseUp
+	            },
+	            'Anchor tag: hover is green, active is red, touch active is blue'
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return FixStickyHover;
+	}(_react2.default.Component);
+	
+	exports.default = FixStickyHover;
 
 /***/ },
-/* 289 */
+/* 291 */
 /*!*************************************!*\
   !*** ./components/PageNotFound.jsx ***!
   \*************************************/
@@ -30494,63 +30697,6 @@
 	}
 	
 	exports.default = PageNotFound;
-
-/***/ },
-/* 290 */,
-/* 291 */
-/*!********************************!*\
-  !*** ./components/CssTest.jsx ***!
-  \********************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function CssTest(_ref) {
-	  var title = _ref.title;
-	  var testClass = _ref.testClass;
-	  var description = _ref.description;
-	
-	  return _react2.default.createElement(
-	    "div",
-	    { className: "test" },
-	    _react2.default.createElement(
-	      "h2",
-	      { id: testClass + "-title" },
-	      title
-	    ),
-	    description,
-	    _react2.default.createElement(
-	      "div",
-	      { className: "anchor-tag" },
-	      _react2.default.createElement(
-	        "a",
-	        { href: "#" + testClass + "-title", className: testClass },
-	        "Anchor tag: hover is green, active is red"
-	      )
-	    ),
-	    _react2.default.createElement(
-	      "div",
-	      { className: "button-tag" },
-	      _react2.default.createElement(
-	        "button",
-	        { className: testClass },
-	        "Button tag: hover is green, active is red"
-	      )
-	    )
-	  );
-	}
-	
-	exports.default = CssTest;
 
 /***/ }
 /******/ ]);
