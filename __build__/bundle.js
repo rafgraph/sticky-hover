@@ -25501,7 +25501,9 @@
 	  return _react2.default.createElement(
 	    'div',
 	    { className: _detectTouch.hasTouch ? 'touch' : 'no-touch' },
-	    _react2.default.createElement(_CssTest2.default, { title: 'Test 1', testClass: 'test-1', description: _react2.default.createElement(
+	    _react2.default.createElement(_CssTest2.default, { title: 'Test 1', testClass: 'test-1',
+	      tagText: 'hover is green, active is red',
+	      description: _react2.default.createElement(
 	        'div',
 	        { className: 'test-description' },
 	        _react2.default.createElement(
@@ -25516,8 +25518,11 @@
 	          ':active'
 	        ),
 	        ' pseudo-classes applied normally (without restriction).'
-	      ) }),
-	    _react2.default.createElement(_CssTest2.default, { title: 'Test 2', testClass: 'test-2', description: _react2.default.createElement(
+	      )
+	    }),
+	    _react2.default.createElement(_CssTest2.default, { title: 'Test 2', testClass: 'test-2',
+	      tagText: 'hover is green, active is red, touch active is blue',
+	      description: _react2.default.createElement(
 	        'div',
 	        { className: 'test-description' },
 	        _react2.default.createElement(
@@ -25531,15 +25536,32 @@
 	          null,
 	          ':active'
 	        ),
-	        ' pseudo-classes only applied inside ',
+	        ' (red) pseudo-classes applied inside ',
 	        _react2.default.createElement(
 	          'code',
 	          null,
-	          '@media (hover: hover) ',
-	          '{ ... }'
-	        )
-	      ) }),
-	    _react2.default.createElement(_CssTest2.default, { title: 'Test 3', testClass: 'test-3', description: _react2.default.createElement(
+	          '@media (hover: hover)'
+	        ),
+	        '. ',
+	        ' ',
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          ':active'
+	        ),
+	        ' (blue) pseudo-class applied inside ',
+	        ' ',
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          '@media (hover: none)'
+	        ),
+	        '.'
+	      )
+	    }),
+	    _react2.default.createElement(_CssTest2.default, { title: 'Test 3', testClass: 'test-3',
+	      tagText: 'hover is green, active is red, touch active is blue',
+	      description: _react2.default.createElement(
 	        'div',
 	        { className: 'test-description' },
 	        _react2.default.createElement(
@@ -25553,15 +25575,31 @@
 	          null,
 	          ':active'
 	        ),
-	        ' pseudo-classes applied normally, but reset inside of ',
+	        ' (red) pseudo-classes applied normally. ',
 	        _react2.default.createElement(
 	          'code',
 	          null,
-	          '@media (hover: none) ',
-	          '{ ... }'
-	        )
-	      ) }),
-	    _react2.default.createElement(_CssTest2.default, { title: 'Test 4', testClass: 'test-4', description: _react2.default.createElement(
+	          ':hover'
+	        ),
+	        ' is reset and ',
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          ':active'
+	        ),
+	        ' (blue) is applied inside of ',
+	        ' ',
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          '@media (hover: none)'
+	        ),
+	        '.'
+	      )
+	    }),
+	    _react2.default.createElement(_CssTest2.default, { title: 'Test 4', testClass: 'test-4',
+	      tagText: 'hover is green, active is red, touch active is blue',
+	      description: _react2.default.createElement(
 	        'div',
 	        { className: 'test-description' },
 	        _react2.default.createElement(
@@ -25575,15 +25613,33 @@
 	          null,
 	          ':active'
 	        ),
-	        ' pseudo-classes only applied if ',
+	        ' (red) pseudo-classes applied if ',
 	        _react2.default.createElement(
 	          'code',
 	          null,
 	          '.no-touch'
 	        ),
-	        ' class is present.'
-	      ) }),
-	    _react2.default.createElement(_CssTest2.default, { title: 'Test 5', testClass: 'test-5', description: _react2.default.createElement(
+	        ' class is present. ',
+	        ' ',
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          ':active'
+	        ),
+	        ' (blue) is applied if ',
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          '.touch'
+	        ),
+	        ' ',
+	        ' ',
+	        'class is present.'
+	      )
+	    }),
+	    _react2.default.createElement(_CssTest2.default, { title: 'Test 5', testClass: 'test-5',
+	      tagText: 'hover is green, active is red, touch active is blue',
+	      description: _react2.default.createElement(
 	        'div',
 	        { className: 'test-description' },
 	        _react2.default.createElement(
@@ -25607,10 +25663,23 @@
 	        _react2.default.createElement(
 	          'code',
 	          null,
-	          '@media (hover: hover) ',
-	          '{ ... }'
-	        )
-	      ) }),
+	          '@media (hover: hover)'
+	        ),
+	        '. ',
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          ':active'
+	        ),
+	        ' (blue) is applied if ',
+	        _react2.default.createElement(
+	          'code',
+	          null,
+	          '.touch'
+	        ),
+	        ' class is present.'
+	      )
+	    }),
 	    _react2.default.createElement(_RadiumTest2.default, { title: 'Test 6', description: _react2.default.createElement(
 	        'div',
 	        { className: 'test-description' },
@@ -25730,6 +25799,7 @@
 	  var title = _ref.title;
 	  var testClass = _ref.testClass;
 	  var description = _ref.description;
+	  var tagText = _ref.tagText;
 
 	  return _react2.default.createElement(
 	    "div",
@@ -25746,7 +25816,8 @@
 	      _react2.default.createElement(
 	        "a",
 	        { href: "#" + testClass + "-title", className: testClass },
-	        "Anchor tag: hover is green, active is red"
+	        "Anchor tag: ",
+	        tagText
 	      )
 	    ),
 	    _react2.default.createElement(
@@ -25755,7 +25826,8 @@
 	      _react2.default.createElement(
 	        "button",
 	        { className: testClass },
-	        "Button tag: hover is green, active is red"
+	        "Button tag: ",
+	        tagText
 	      )
 	    )
 	  );

@@ -20,7 +20,7 @@ html, body, nav, p, div, span, code, h1, h2, a, button {
 
 #root > div {
   min-width: 34vw;
-  max-width: 550px;
+  max-width: 600px;
   margin: auto;
   padding: 2vh 3vw 12vh 3vw;
 }
@@ -113,6 +113,12 @@ code {
   }
 }
 
+@media (hover: none) {
+  .test-2:active {
+    color: blue;
+  }
+}
+
 /*test 3*/
 .test-3:hover {
   color: green;
@@ -128,7 +134,7 @@ code {
   }
 
   .test-3:active {
-    color: inherit;
+    color: blue;
   }
 }
 
@@ -139,6 +145,10 @@ code {
 
 .no-touch .test-4:active {
   color: red;
+}
+
+.touch .test-4:active {
+  color: blue;
 }
 
 /*test 5*/
@@ -158,4 +168,8 @@ code {
   .test-5:active {
     color: red;
   }
+}
+
+.touch .test-5:active {
+  color: blue;
 }

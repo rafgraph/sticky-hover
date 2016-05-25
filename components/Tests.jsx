@@ -10,42 +10,63 @@ function Tests() {
   return (
     <div className={hasTouch ? 'touch' : 'no-touch'}>
 
-      <CssTest title="Test 1" testClass="test-1" description={
+      <CssTest title="Test 1" testClass="test-1"
+        tagText="hover is green, active is red"
+        description={
           <div className="test-description">
             <code>:hover</code> and <code>:active</code> pseudo-classes applied
             normally (without restriction).
           </div>
-      }/>
+        }
+      />
 
-      <CssTest title="Test 2" testClass="test-2" description={
+      <CssTest title="Test 2" testClass="test-2"
+        tagText="hover is green, active is red, touch active is blue"
+        description={
           <div className="test-description">
-            <code>:hover</code> and <code>:active</code> pseudo-classes only
-            applied inside <code>@media (hover: hover) {'{ ... }'}</code>
+            <code>:hover</code> and <code>:active</code> (red) pseudo-classes
+            applied inside <code>@media (hover: hover)</code>. {' '}
+            <code>:active</code> (blue) pseudo-class applied inside {' '}
+            <code>@media (hover: none)</code>.
           </div>
-      }/>
+        }
+      />
 
-      <CssTest title="Test 3" testClass="test-3" description={
+      <CssTest title="Test 3" testClass="test-3"
+        tagText="hover is green, active is red, touch active is blue"
+        description={
           <div className="test-description">
-            <code>:hover</code> and <code>:active</code> pseudo-classes applied
-            normally, but reset inside
-            of <code>@media (hover: none) {'{ ... }'}</code>
+            <code>:hover</code> and <code>:active</code> (red) pseudo-classes
+            applied normally. <code>:hover</code> is reset
+            and <code>:active</code> (blue) is applied inside of {' '}
+            <code>@media (hover: none)</code>.
           </div>
-      }/>
+        }
+      />
 
-      <CssTest title="Test 4" testClass="test-4" description={
+      <CssTest title="Test 4" testClass="test-4"
+        tagText="hover is green, active is red, touch active is blue"
+        description={
           <div className="test-description">
-            <code>:hover</code> and <code>:active</code> pseudo-classes only
-            applied if <code>.no-touch</code> class is present.
+            <code>:hover</code> and <code>:active</code> (red) pseudo-classes
+            applied if <code>.no-touch</code> class is present. {' '}
+            <code>:active</code> (blue) is applied if <code>.touch</code> {' '}
+            class is present.
           </div>
-      }/>
+        }
+      />
 
-      <CssTest title="Test 5" testClass="test-5" description={
+      <CssTest title="Test 5" testClass="test-5"
+        tagText="hover is green, active is red, touch active is blue"
+        description={
           <div className="test-description">
             <code>:hover</code> and <code>:active</code> pseudo-classes
             applied if <code>.no-touch</code> class is present, as well as inside
-            of <code>@media (hover: hover) {'{ ... }'}</code>
+            of <code>@media (hover: hover)</code>. <code>:active</code> (blue)
+            is applied if <code>.touch</code> class is present.
           </div>
-      }/>
+        }
+      />
 
       <RadiumTest title="Test 6" description={
           <div className="test-description">
