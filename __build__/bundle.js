@@ -29929,6 +29929,7 @@
 	          style: this.getStyle(),
 	          onTouchStart: _detectTouch.hasTouch ? this.handleTouchStart : null,
 	          onTouchEnd: _detectTouch.hasTouch ? this.handleTouchEnd : null,
+	          onTouchCancel: _detectTouch.hasTouch ? this.handleTouchEnd : null,
 	          onMouseEnter: this.handleMouseEnter,
 	          onMouseLeave: this.handleMouseLeave,
 	          onMouseDown: this.handleMouseDown,

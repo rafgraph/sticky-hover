@@ -66,6 +66,7 @@ class StickyHoverFix extends React.Component {
         style={this.getStyle()}
         onTouchStart={hasTouch ? this.handleTouchStart : null}
         onTouchEnd={hasTouch ? this.handleTouchEnd : null}
+        onTouchCancel={hasTouch ? this.handleTouchEnd : null}
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
         onMouseDown={this.handleMouseDown}
