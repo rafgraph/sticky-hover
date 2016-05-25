@@ -29860,7 +29860,7 @@
 	      hover: false,
 	      active: false,
 	      touchActive: false,
-	      touchTimeStamp: new Date()
+	      touchTime: null
 	    };
 	    _this.getStyle = _this.getStyle.bind(_this);
 	    _this.handleTouchStart = _this.handleTouchStart.bind(_this);
@@ -29890,7 +29890,7 @@
 	    value: function handleTouchEnd() {
 	      this.setState({
 	        touchActive: false,
-	        touchTimeStamp: new Date()
+	        touchTime: new Date()
 	      });
 	    }
 	  }, {
@@ -29898,7 +29898,7 @@
 	    value: function handleMouseEnter() {
 	      // arbitrary 500 ms leeway for mouseEnter event to fire after
 	      // touchEnd event
-	      if (new Date() - this.state.touchTimeStamp > 500) {
+	      if (!this.state.touchTime || new Date() - this.state.touchTime > 500) {
 	        this.setState({ hover: true });
 	      }
 	    }

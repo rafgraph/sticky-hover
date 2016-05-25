@@ -8,7 +8,7 @@ class StickyHoverFix extends React.Component {
       hover: false,
       active: false,
       touchActive: false,
-      touchTimeStamp: new Date()
+      touchTime: null
     };
     this.getStyle = this.getStyle.bind(this);
     this.handleTouchStart = this.handleTouchStart.bind(this);
@@ -33,14 +33,14 @@ class StickyHoverFix extends React.Component {
   handleTouchEnd() {
     this.setState({
       touchActive: false,
-      touchTimeStamp: new Date()
+      touchTime: new Date()
     });
   }
 
   handleMouseEnter() {
     // arbitrary 500 ms leeway for mouseEnter event to fire after
     // touchEnd event
-    if (new Date() - this.state.touchTimeStamp > 500) {
+    if (!this.state.touchTime || new Date() - this.state.touchTime > 500) {
       this.setState({hover: true})
     }
   }
