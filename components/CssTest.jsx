@@ -1,4 +1,11 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+
+const propTypes = {
+  title: PropTypes.string.isRequired,
+  testClass: PropTypes.string.isRequired,
+  description: PropTypes.object.isRequired,
+  tagText: PropTypes.string.isRequired,
+};
 
 function CssTest({ title, testClass, description, tagText }) {
   return (
@@ -18,5 +25,7 @@ function CssTest({ title, testClass, description, tagText }) {
     </div>
   );
 }
+
+CssTest.propTypes = propTypes;
 
 export default CssTest;

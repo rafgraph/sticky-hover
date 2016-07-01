@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
+
+const propTypes = {
+  location: PropTypes.object.isRequired,
+};
 
 function PageNotFound({ location }) {
   return (
@@ -12,5 +16,7 @@ function PageNotFound({ location }) {
     </div>
   );
 }
+
+PageNotFound.propTypes = propTypes;
 
 export default PageNotFound;

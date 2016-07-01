@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import StickyHoverFix from './StickyHoverFix';
 
+const propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.object.isRequired,
+};
+
 function CustomJsTest({ title, description }) {
-  const id=title.replace(/ /g, '-').toLowerCase();
+  const id = title.replace(/ /g, '-').toLowerCase();
 
   return (
     <div className="test">
@@ -30,5 +35,7 @@ function CustomJsTest({ title, description }) {
     </div>
   );
 }
+
+CustomJsTest.propTypes = propTypes;
 
 export default CustomJsTest;
