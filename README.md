@@ -1,3 +1,3 @@
 # Sticky Hover Tests for Mobile
 
-[Live demo](http://sticky-hover.rafrex.com)
+[Live demo](https://sticky-hover.rafgraph.dev)

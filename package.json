@@ -3,9 +3,9 @@
   "description": "Sticky hover on mobile tests",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rafrex/sticky-hover.git"
+    "url": "git+https://github.com/rafgraph/sticky-hover.git"
   },
-  "author": "Rafael Pedicini <code@rafrex.com>",
+  "author": "Rafael Pedicini <rafael@rafgraph.dev>",
   "license": "MIT",
   "dependencies": {
     "radium": "^0.17.1",
